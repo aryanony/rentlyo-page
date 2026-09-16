@@ -1,0 +1,21 @@
+{
+  "name": "Rentlyo Property Management",
+  "short_name": "Rentlyo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#041B23",
+  "theme_color": "#044040",
+  "description": "One-time purchase property management suite for Indian landlords and commercial complexes.",
+  "icons": [
+    {
+      "src": "assets/rentlyo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/rentlyo-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

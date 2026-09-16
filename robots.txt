@@ -1,0 +1,31 @@
+# Robots.txt for Rentlyo Property Management Platform
+# Domain: https://rentlyo.cscouncil.in/
+# Optimized for Web & AI Answer Engine Indexing
+
+User-agent: *
+Allow: /
+Disallow: /downloads/
+
+# Explicit permissions for AI & LLM Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://rentlyo.cscouncil.in/sitemap.xml

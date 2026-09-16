@@ -1,0 +1,520 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1a202c;
+    background-color: #F8FAF9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #CF9D30;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-medium px-6 py-3.5 rounded-xl bg-brand-teal text-white shadow-md hover:bg-brand-teal-light transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2;
+    box-shadow: 0 4px 14px 0 rgba(4, 64, 64, 0.25);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 25px -4px rgba(4, 64, 64, 0.38);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center font-semibold px-6 py-3.5 rounded-xl bg-brand-gold text-brand-dark shadow-glow hover:bg-brand-gold-light transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2 relative overflow-hidden;
+    box-shadow: 0 6px 20px -2px rgba(207, 157, 48, 0.35);
+  }
+  .btn-gold:hover {
+    box-shadow: 0 10px 28px -4px rgba(207, 157, 48, 0.5);
+  }
+
+  /* Gleam sweep reflection on gold button */
+  .btn-gold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: none;
+  }
+  .btn-gold:hover::after {
+    animation: btnGleamSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-medium px-6 py-3.5 rounded-xl bg-white text-brand-teal border border-brand-border-light shadow-sm hover:bg-brand-surface hover:border-brand-teal/30 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2;
+  }
+  .btn-secondary:hover {
+    box-shadow: 0 8px 20px -4px rgba(4, 27, 35, 0.08);
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center font-medium px-6 py-3.5 rounded-xl bg-white/10 text-white border border-white/25 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 backdrop-blur-sm;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(4, 64, 64, 0.08);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+
+  .glass-dark {
+    background: rgba(8, 37, 48, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(207, 157, 48, 0.22);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+
+  /* Card Hover Lift & Border Illumination */
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -10px rgba(4, 27, 35, 0.12), 0 0 20px -3px rgba(207, 157, 48, 0.16);
+    border-color: rgba(207, 157, 48, 0.38) !important;
+  }
+
+  /* Diagonal light sheen glide on glass elements */
+  .glass-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-sheen::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.09) 50%,
+      transparent 60%
+    );
+    transform: translateX(-100%) rotate(25deg);
+    transition: transform 0.85s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-sheen:hover::before {
+    transform: translateX(100%) rotate(25deg);
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-gold/15 text-brand-gold-dark border border-brand-gold/30 transition-all duration-300;
+  }
+
+  .badge-teal {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-teal/10 text-brand-teal border border-brand-teal/20 transition-all duration-300;
+  }
+
+  /* Luxury Range input styles with glowing thumb */
+  input[type="range"] {
+    accent-color: #CF9D30;
+    transition: all 0.2s ease;
+  }
+  input[type="range"]:focus {
+    filter: drop-shadow(0 0 8px rgba(207, 157, 48, 0.45));
+  }
+}
+
+/* ==========================================================================
+   Luxury Micro-Animations & Scroll Effects
+   ========================================================================== */
+@keyframes btnGleamSweep {
+  0% { left: -130%; }
+  100% { left: 160%; }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.3deg); }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+.pulse-live-glow {
+  position: relative;
+}
+
+.pulse-live-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.45);
+  animation: pulseAura 2s infinite;
+  z-index: -1;
+}
+
+@keyframes borderGlowPulse {
+  0%, 100% { border-color: rgba(207, 157, 48, 0.3); box-shadow: 0 0 10px rgba(207, 157, 48, 0.1); }
+  50% { border-color: rgba(207, 157, 48, 0.7); box-shadow: 0 0 18px rgba(207, 157, 48, 0.25); }
+}
+
+.badge-glow-anim {
+  animation: borderGlowPulse 3.5s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Magic Header (Auto-Hide & Auto-Show on Scroll) & Slim Modern Navbar
+   ========================================================================== */
+header.magic-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+header.magic-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+header.magic-header.header-visible {
+  transform: translateY(0);
+}
+
+header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 25px -5px rgba(4, 27, 35, 0.08), 0 1px 3px 0 rgba(4, 27, 35, 0.04);
+  border-bottom-color: rgba(207, 157, 48, 0.22) !important;
+}
+
+/* Slim Modern Nav Link Hover Animation */
+.nav-link-modern {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.nav-link-modern::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #034444, #CF9D30);
+  border-radius: 9999px;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-modern:hover::after,
+.nav-link-modern.active::after {
+  width: 100%;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale-init {
+  opacity: 0;
+  transform: scale(0.96) translateY(18px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale-init.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+
+/* ==========================================================================
+   Rentlyo High-Performance Brand Loader
+   ========================================================================== */
+.rentlyo-loader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #041B23;
+  background-image: 
+    radial-gradient(circle at 50% 38%, rgba(4, 64, 64, 0.48) 0%, transparent 60%),
+    radial-gradient(circle at 85% 15%, rgba(207, 157, 48, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(3, 68, 68, 0.35) 0%, transparent 55%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, visibility;
+  pointer-events: auto;
+}
+
+.rentlyo-loader-wrapper.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rentlyo-loader-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.25rem 2rem;
+  max-width: 22rem;
+  width: 90%;
+  border-radius: 1.5rem;
+  background: rgba(8, 37, 48, 0.85);
+  border: 1px solid rgba(207, 157, 48, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 40px -5px rgba(207, 157, 48, 0.25);
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rentlyo-loader-wrapper.loaded .rentlyo-loader-card {
+  transform: scale(0.96) translateY(-8px);
+}
+
+/* Central emblem container */
+.rentlyo-emblem-container {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+/* Outer rotating gold orbital ring */
+.rentlyo-orbital-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(207, 157, 48, 0.45);
+  animation: rentlyoSpin 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Inner pulse glow ring */
+.rentlyo-pulse-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(207, 157, 48, 0.28) 0%, rgba(4, 64, 64, 0.15) 70%, transparent 100%);
+  animation: rentlyoPulse 2.2s ease-in-out infinite;
+}
+
+/* Emblem icon */
+.rentlyo-emblem-svg {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 4px 14px rgba(207, 157, 48, 0.4));
+  animation: rentlyoFloat 3s ease-in-out infinite;
+}
+
+/* Typography & Badges */
+.rentlyo-loader-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rentlyo-loader-title span {
+  color: #CF9D30;
+}
+
+.rentlyo-loader-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(4, 64, 64, 0.65);
+  color: #5eead4;
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  margin-bottom: 1.25rem;
+}
+
+.rentlyo-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: rentlyoBlink 1.4s ease-in-out infinite;
+}
+
+/* Progress track and bar */
+.rentlyo-progress-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rentlyo-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  width: 100%;
+}
+
+.rentlyo-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rentlyo-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #044040 0%, #CF9D30 65%, #ffd166 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(207, 157, 48, 0.75);
+  transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.rentlyo-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: rentlyoShimmer 1.4s infinite;
+}
+
+/* Status message */
+.rentlyo-status-text {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+  min-height: 1.15rem;
+  transition: opacity 0.2s ease;
+  font-weight: 500;
+}
+
+/* Keyframe animations */
+@keyframes rentlyoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rentlyoPulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes rentlyoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes rentlyoBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes rentlyoShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rentlyo-orbital-ring,
+  .rentlyo-pulse-glow,
+  .rentlyo-emblem-svg,
+  .rentlyo-live-dot,
+  .rentlyo-progress-fill::after {
+    animation: none !important;
+  }
+}

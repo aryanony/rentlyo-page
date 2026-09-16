@@ -1,0 +1,69 @@
+# Rentlyo — Comprehensive Technical & Product Specification (LLMs Full Reference)
+
+## 1. Product Identity & Business Model
+- **Product Name**: Rentlyo
+- **Official Domain**: https://rentlyo.cscouncil.in/
+- **Developer / Founder**: Aaryan Gupta
+  - Portfolio: https://aryanony.pages.dev/
+  - LinkedIn: https://linkedin.com/in/aryanony
+  - GitHub: https://github.com/aryanony/rentlyo
+  - Phone / WhatsApp: +91 62056 50368
+  - Email: aaryangupta.pm@gmail.com
+- **Model**: One-time purchase, lifetime license, white-label deployment.
+- **Price**: ₹20,000 INR (flat one-time fee).
+- **Recurring Cost**: ₹0 forever (no monthly, no yearly, no per-flat or per-tenant fees).
+- **Target Audience**: Indian property owners with 5 to 50 rental units (residential flats, PG/hostel rooms, commercial shopping complexes, mixed-use buildings).
+- **Live Reference Property**: Arya Plaza, Munger, Bihar, India (Live web portal: https://aryaplaza.vercel.app).
+
+## 2. Capability Matrix (Verified from Source Code)
+| Feature Area | Tenant Companion App | Owner Admin Console |
+|---|---|---|
+| Live rent balance & dues | View | Manage |
+| Lease terms & plain-language deal summary | View | Configure |
+| Advance deposit & top-ups | View | Manage |
+| Payment ledger & installments | Report (Cash, UPI) | Confirm & Reconcile |
+| Direct 0% commission UPI handoff | 1-Tap Pay | Verify & Confirm |
+| Rent escalation tiers (step-up) | View | Configure |
+| Maintenance requests | Create & track | Resolve |
+| Utility sub-meter billing (electricity / water) | View history & tariffs | Calculate & publish |
+| Notices & announcements | Read | Publish |
+| Gate passes & visitor logs | Generate & use | Administer & approve |
+| Weekly 4-meal mess menus (PG / hostels) | Read daily menu | Publish & edit |
+| English & हिन्दी bilingual localization | 1-Tap toggle | 1-Tap toggle |
+| Cloud dynamic rebranding (zero recompile) | Live sync | Palette & logo customizer |
+| Biometric & 6-digit PIN lockout | Unlock | Enforce & reset |
+| Multi-property switching | Contextual | Yes (full switcher) |
+| PDF / CSV / Excel reports | PDF receipt | Yes (exportable ledgers) |
+| In-app OTA updates | Receive & install | Publish release package |
+
+## 3. Core Architectural Subsystems
+- **Frontend Applications**: Two native Flutter applications (Tenant and Admin) compiled to Android APKs (minSdk 21, targetSdk 34).
+- **Backend Infrastructure**: Google Firebase (Spark Free Tier).
+  - **Firebase Authentication**: Phone number / email authentication with local 6-digit PIN biometric lock.
+  - **Cloud Firestore**: Real-time NoSQL streaming database.
+  - **Firestore Security Rules**: Role-based access control enforcing owner administrative boundaries and tenant lease-level data isolation.
+  - **Firebase Cloud Messaging (FCM)**: Push notifications and rent reminders.
+- **White-Label Deployment Engine**:
+  - Controlled by central `client_config.json`.
+  - Automated launcher icon and Android splash screen generation.
+  - Automatic Firebase API key and project discovery via `google-services.json`.
+  - One-click release compilation for both client APKs.
+
+## 4. Cost Math & Economic Comparison
+- **Rentlyo**: ₹20,000 flat upfront. No server bill (Firebase Spark free tier includes 50,000 reads/day and 20,000 writes/day; 25-unit properties consume < 10% of quota).
+- **Subscription Alternatives (SaaS)**:
+  - Average Indian property SaaS: ₹79/unit/month or ₹1,499 flat/month.
+  - 1-Year cost: ₹17,988.
+  - 3-Year cost: ₹53,964.
+  - 5-Year cost: ₹89,940.
+  - 5-Year Rentlyo Net Savings: ₹69,940+.
+
+## 5. Direct Contact & Deployment Inquiry
+- Founder: Aaryan Gupta
+- Phone / Call: +91 62056 50368
+- WhatsApp: +91 62056 50368 (https://wa.me/916205650368)
+- Email: aaryangupta.pm@gmail.com
+- Portfolio: https://aryanony.pages.dev/
+- LinkedIn: https://linkedin.com/in/aryanony
+- GitHub Repo: https://github.com/aryanony/rentlyo
+- Official Website: https://rentlyo.cscouncil.in/
