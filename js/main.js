@@ -240,30 +240,30 @@
       }
     });
 
-    // Automatic APK Download tracking
+    // Automatic APK Download tracking (supporting both demo_apk_download and apk_download)
     document.querySelectorAll('a[href*=".apk"], a[download]').forEach(anchor => {
       if (!anchor.hasAttribute('data-track-event')) {
         anchor.addEventListener('click', () => {
-          gtagEvent('apk_download', {
-            file: anchor.getAttribute('href'),
-            label: anchor.textContent.trim() || 'APK Download'
-          });
+          const fileTarget = anchor.getAttribute('href');
+          const fileLabel = anchor.textContent.trim() || 'APK Download';
+          gtagEvent('demo_apk_download', { file: fileTarget, label: fileLabel });
+          gtagEvent('apk_download', { file: fileTarget, label: fileLabel });
         });
       }
     });
 
-    // Automatic Tel / Phone Call tracking
+    // Automatic Tel / Phone Call tracking (supporting both call_click and phone_call_click)
     document.querySelectorAll('a[href^="tel:"]').forEach(anchor => {
       anchor.addEventListener('click', () => {
-        gtagEvent('phone_call_click', {
-          phone_number: anchor.getAttribute('href'),
-          label: anchor.textContent.trim() || 'Direct Phone'
-        });
+        const phone = anchor.getAttribute('href');
+        const label = anchor.textContent.trim() || 'Direct Phone';
+        gtagEvent('call_click', { phone_number: phone, label: label });
+        gtagEvent('phone_call_click', { phone_number: phone, label: label });
       });
     });
 
     // Automatic Outbound Link tracking
-    document.querySelectorAll('a[href^="http"]:not([href*="rentlyo.cscouncil.in"])').forEach(anchor => {
+    document.querySelectorAll('a[href^="http"]:not([href*="rentlyo.cscouncil.in"]):not([href*="rentlyo.in"]):not([href*="aryaplaza.vercel.app"])').forEach(anchor => {
       if (!anchor.href.includes('wa.me') && !anchor.href.includes('localhost')) {
         anchor.addEventListener('click', () => {
           gtagEvent('outbound_click', {
@@ -281,12 +281,159 @@
     initHeaderScroll();
     initCopyMicroInteractions();
     initSmoothCounterAnimation();
+    initRoiCalculator();
+    initExitIntentModal();
 
     // --------------------------------------------------------------------------
     // Rentlyo High-Performance Brand Loader Controller
     // --------------------------------------------------------------------------
     initRentlyoLoader();
   });
+
+  // ROI / Time-Savings Calculator
+  function initRoiCalculator() {
+    const unitsSlider = document.getElementById('roi-units');
+    const hoursSlider = document.getElementById('roi-hours');
+    const rateSlider = document.getElementById('roi-rate');
+
+    if (!unitsSlider || !hoursSlider || !rateSlider) return;
+
+    const unitsVal = document.getElementById('roi-units-val');
+    const hoursVal = document.getElementById('roi-hours-val');
+    const rateVal = document.getElementById('roi-rate-val');
+
+    const monthlyHoursDisplay = document.getElementById('roi-monthly-hours-saved');
+    const annualSavingsDisplay = document.getElementById('roi-annual-savings');
+    const paybackDisplay = document.getElementById('roi-payback-months');
+
+    let roiLogTimer = null;
+
+    function calculateRoi() {
+      const units = parseInt(unitsSlider.value, 10);
+      const weeklyHours = parseFloat(hoursSlider.value);
+      const hourlyRate = parseInt(rateSlider.value, 10);
+
+      if (unitsVal) unitsVal.textContent = units;
+      if (hoursVal) hoursVal.textContent = weeklyHours + ' hrs/wk';
+      if (rateVal) rateVal.textContent = '₹' + hourlyRate.toLocaleString('en-IN') + '/hr';
+
+      // Rentlyo cuts ~80% of routine administration (meter reading, dues chasing, ledger reconciliation)
+      const weeklySaved = weeklyHours * 0.8;
+      const monthlyHoursSaved = Math.round(weeklySaved * 4.33);
+      const annualHoursSaved = Math.round(weeklySaved * 52);
+      const annualMoneySaved = Math.round(annualHoursSaved * hourlyRate);
+
+      // Payback period for ₹20,000 one-time investment
+      const monthlyMoneySaved = annualMoneySaved / 12;
+      const paybackMonths = monthlyMoneySaved > 0 ? (20000 / monthlyMoneySaved).toFixed(1) : '—';
+
+      if (monthlyHoursDisplay) monthlyHoursDisplay.textContent = `${monthlyHoursSaved} hrs/mo`;
+      if (annualSavingsDisplay) annualSavingsDisplay.textContent = `₹${annualMoneySaved.toLocaleString('en-IN')}`;
+      if (paybackDisplay) paybackDisplay.textContent = `${paybackMonths} mo`;
+
+      clearTimeout(roiLogTimer);
+      roiLogTimer = setTimeout(() => {
+        gtagEvent('roi_calculator_used', {
+          units: units,
+          weekly_hours_spent: weeklyHours,
+          hourly_rate: hourlyRate,
+          annual_savings: annualMoneySaved,
+          payback_months: paybackMonths
+        });
+      }, 1500);
+    }
+
+    unitsSlider.addEventListener('input', calculateRoi);
+    hoursSlider.addEventListener('input', calculateRoi);
+    rateSlider.addEventListener('input', calculateRoi);
+    calculateRoi();
+  }
+
+  // Exit-Intent PDF Offer & Email Capture
+  function initExitIntentModal() {
+    // Only on desktop viewport, non-touch devices
+    if (window.innerWidth < 1024 || 'ontouchstart' in window) return;
+
+    const modal = document.getElementById('exit-intent-modal');
+    if (!modal) return;
+
+    const closeBtn = document.getElementById('exit-intent-close');
+    const cancelBtn = document.getElementById('exit-intent-cancel');
+    const form = document.getElementById('exit-intent-form');
+    const successBox = document.getElementById('exit-intent-success');
+    const emailInput = document.getElementById('exit-intent-email');
+
+    // Check if dismissed this session
+    try {
+      if (sessionStorage.getItem('rentlyo_exit_dismissed') === 'true') {
+        return;
+      }
+    } catch (e) {}
+
+    let hasShown = false;
+
+    function showModal() {
+      if (hasShown) return;
+      hasShown = true;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      gtagEvent('exit_intent_shown');
+      if (emailInput) setTimeout(() => emailInput.focus(), 100);
+    }
+
+    function dismissModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      try {
+        sessionStorage.setItem('rentlyo_exit_dismissed', 'true');
+      } catch (e) {}
+    }
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 15 && !hasShown) {
+        showModal();
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', dismissModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', dismissModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) dismissModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        dismissModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput ? emailInput.value.trim() : '';
+        if (!email) return;
+
+        try {
+          localStorage.setItem('rentlyo_lead_email', email);
+          sessionStorage.setItem('rentlyo_exit_dismissed', 'true');
+        } catch (err) {}
+
+        gtagEvent('lead_capture_submit', {
+          email: email,
+          source: 'exit_intent_blueprint'
+        });
+
+        // Show success state
+        form.classList.add('hidden');
+        if (successBox) successBox.classList.remove('hidden');
+
+        setTimeout(() => {
+          dismissModal();
+        }, 3200);
+      });
+    }
+  }
 
   // 1. Scroll-Triggered Reveal with Zero Lag
   function initScrollReveal() {

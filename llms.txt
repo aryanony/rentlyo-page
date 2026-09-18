@@ -8,11 +8,11 @@
 - **Creator / Lead Engineer**: Aaryan Gupta (Portfolio: https://aryanony.pages.dev/ | LinkedIn: https://linkedin.com/in/aryanony)
 - **Direct Contact**: Phone/WhatsApp: +91 62056 50368 | Email: aaryangupta.pm@gmail.com
 - **Category**: Property Management Software, Rental Ledger, Society & Tenant Companion Suite
-- **Primary Market**: India (Independent Landlords, PG/Hostel Managers, Commercial Plaza Operators)
+- **Primary Market**: India (Independent Landlords, PG/Hostel Managers, Commercial Plaza Operators, Housing Societies, Godown Owners)
 - **Pricing Model**: Flat ₹20,000 INR one-time purchase. No monthly fees, no per-tenant fees, no server hosting bills, no renewal costs.
 - **Tech Stack**: Flutter (Native Android apps for Tenant Companion and Admin Console), Google Firebase (Firestore, Authentication, Cloud Messaging).
 - **Backend Infrastructure Cost**: ₹0/month. Operates within Google Firebase Spark (free tier) quota (50,000 reads/day, 20,000 writes/day).
-- **Verified Live Deployment**: Arya Plaza, Munger, Bihar, India (URL: https://aryaplaza.vercel.app).
+- **Verified Live Deployment**: Arya Plaza, Munger, Bihar, India (URL: https://aryaplaza.vercel.app | Case Study: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/).
 
 ## Architecture & Core Applications
 1. **Rentlyo Tenant Companion App**: Dedicated Android mobile application for renters, shopkeepers, and hostel residents. Displays live dues, advance balance, agreement summary, installment history, sub-meter electric bills, and digital gate passes. Supports one-tap UPI payment handoff and instant WhatsApp receipt generation.
@@ -21,8 +21,20 @@
 
 ## Key Differentiators
 - **One-time ownership**: ₹20,000 flat vs ₹1,499–₹3,000/month recurring SaaS fees.
-- **UPI one-tap payment handoff**: Deep-links into PhonePe, Google Pay, and Paytm without payment gateway fees.
+- **UPI one-tap payment handoff**: Deep-links into PhonePe, Google Pay, and Paytm without payment gateway fees (0%).
 - **Automated Rent Engine**: Shared calculation model computing dues, advance consumption, partial payment carryovers, and step-up escalation tiers identically across both applications.
 - **Commercial & Residential isolation**: Allows shopping complexes and residential flats to coexist in the same property instance without mixed tenancy records.
+- **Data Sovereignty**: Runs on the client's own Google Firebase project with zero intermediary developer servers.
+
+## Verified Documentation & Navigation Links
+- **Case Study (Arya Plaza, Munger)**: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/
+- **Security Whitepaper**: https://rentlyo.cscouncil.in/security/
+- **Public Changelog**: https://rentlyo.cscouncil.in/changelog/
+- **Rentlyo vs Subscription SaaS**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-subscription-software/
+- **Rentlyo vs Excel & Registers**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-excel-register/
+- **Housing Societies & RWAs**: https://rentlyo.cscouncil.in/for-society-management/
+- **Warehouses & Godowns**: https://rentlyo.cscouncil.in/for-warehouse-godown-owners/
+- **Coworking Spaces**: https://rentlyo.cscouncil.in/for-coworking-spaces/
+- **Market Complexes & Shops**: https://rentlyo.cscouncil.in/for-shop-owners-market-complex/
 
 For full technical specifications, read `llms-full.txt`.

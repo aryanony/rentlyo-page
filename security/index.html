@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security & Data Architecture — Rentlyo Property Management Platform</title>
+  <meta name="description" content="Discover how Rentlyo secures your property and tenant data. Complete data sovereignty on your own Google Firebase instance with zero intermediary servers.">
+  <link rel="canonical" href="https://rentlyo.cscouncil.in/security/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rentlyo Property Suite">
+  <meta property="og:url" content="https://rentlyo.cscouncil.in/security/">
+  <meta property="og:title" content="Rentlyo Security & Data Architecture — You Own Your Data">
+  <meta property="og:description" content="Direct client Firebase ownership, cryptographic Firestore security rules, and zero middleman servers.">
+  <meta property="og:image" content="https://rentlyo.cscouncil.in/assets/rentlyo-hor.png">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/rentlyo-icon.svg">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#044040">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.min.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-RENTLYO');
+  </script>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://rentlyo.cscouncil.in/security/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://rentlyo.cscouncil.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Security & Architecture",
+            "item": "https://rentlyo.cscouncil.in/security/"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://rentlyo.cscouncil.in/security/#webpage",
+        "url": "https://rentlyo.cscouncil.in/security/",
+        "name": "Rentlyo Security & Data Architecture",
+        "description": "Comprehensive security whitepaper explaining tenant isolation, Firebase ownership, and data privacy."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-brand-surface text-gray-800 antialiased selection:bg-brand-gold selection:text-brand-dark">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-RENTLYO"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Header -->
+  <header class="magic-header sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-border-light shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="../" class="flex items-center gap-3">
+        <img src="../assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto" width="130" height="36">
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium text-gray-600">
+        <a href="../features/" class="nav-link-modern hover:text-brand-teal">Features</a>
+        <a href="../pricing/" class="nav-link-modern hover:text-brand-teal">Pricing</a>
+        <a href="../demo/" class="nav-link-modern hover:text-brand-teal">Demo APK</a>
+        <a href="../case-study/arya-plaza-munger/" class="nav-link-modern hover:text-brand-teal">Case Study</a>
+        <a href="../security/" class="nav-link-modern text-brand-teal font-semibold">Security</a>
+        <a href="../changelog/" class="nav-link-modern hover:text-brand-teal">Changelog</a>
+        <a href="../faq/" class="nav-link-modern hover:text-brand-teal">FAQ</a>
+        <a href="../contact/" class="nav-link-modern hover:text-brand-teal">Contact</a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5" data-track-event="demo_apk_download" data-track-label="Security Header Demo">Demo APK</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 bg-brand-dark text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-radial-vignette opacity-40 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Zero Middleman Architecture
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Who Owns Your Data? You Do.
+      </h1>
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+        Subscription SaaS platforms pool thousands of landlords into a single shared database and hold your financial ledgers hostage behind recurring monthly fees. Rentlyo does the opposite.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Security Pillars -->
+  <main class="max-w-5xl mx-auto px-4 py-16 space-y-16">
+
+    <!-- Pillar 1: Direct Firebase Sovereignty -->
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <div class="inline-block px-3 py-1 rounded-full bg-brand-teal/10 text-brand-teal text-xs font-bold uppercase">
+          Pillar 1: Data Sovereignty
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark font-heading">
+          Direct Google Firebase Project Ownership
+        </h2>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          When we deploy Rentlyo for your property, the database is provisioned on <strong>your own Google account</strong>. 
+          Rentlyo (the developer) does not hold, inspect, or intermediate your tenant records, rent amounts, phone numbers, or ledger balances.
+        </p>
+        <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>No shared multi-tenant vulnerability</strong> — your records are physically isolated in your own cloud container.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>Zero risk of vendor lock-in</strong> — you hold the Firebase admin keys and can revoke developer access at any moment.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>Permanent operation</strong> — even if Rentlyo were to vanish tomorrow, your Android apps communicate directly with Google Firebase and will continue functioning forever.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-brand-border-light shadow-card space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-brand-teal border-b pb-2">Traditional SaaS vs. Rentlyo Architecture</h3>
+        <div class="space-y-3 text-xs">
+          <div class="p-3 rounded-xl bg-rose-50 border border-rose-200">
+            <div class="font-bold text-rose-900">Typical Subscription SaaS:</div>
+            <p class="text-rose-700 mt-1">Tenant App ➔ Vendor's Central Server ➔ Shared DB ➔ Admin App.<br><em>If you stop paying ₹2,000/month, vendor cuts off your access and locks your history.</em></p>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+            <div class="font-bold text-emerald-900">Rentlyo Direct Architecture:</div>
+            <p class="text-emerald-700 mt-1">Tenant App ➔ <strong>Your Google Firebase Instance</strong> ➔ Admin App.<br><em>Zero middleman server. Zero subscription check. You own the infrastructure.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Cryptographic Firestore Security Rules -->
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-brand-border-light shadow-card space-y-4 md:order-1 order-2">
+        <div class="bg-brand-dark rounded-2xl p-4 font-mono text-xs text-gray-300 space-y-2 overflow-x-auto">
+          <div class="text-gray-500">// Firestore Security Rule Excerpt</div>
+          <div class="text-emerald-400">match /deals/{dealId} {</div>
+          <div class="pl-4 text-gray-300">allow read: if isOwner() || isAssignedTenant(dealId);</div>
+          <div class="pl-4 text-gray-300">allow write: if isOwner();</div>
+          <div class="text-emerald-400">}</div>
+          <div class="text-gray-500">// Unit isolation enforced at database engine</div>
+        </div>
+        <p class="text-xs text-gray-500">
+          Security is verified cryptographically by Google Cloud before any document is returned over HTTPS.
+        </p>
+      </div>
+
+      <div class="space-y-4 md:order-2 order-1">
+        <div class="inline-block px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold-dark text-xs font-bold uppercase">
+          Pillar 2: Tenant Isolation
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark font-heading">
+          Mathematical Unit Isolation & Access Control
+        </h2>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Can Tenant A see Tenant B's rent, agreement, or phone number? <strong>Never.</strong> 
+          Every request from the Tenant App is signed with Firebase Authentication tokens and evaluated against declarative Firestore rules.
+        </p>
+        <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>Tenants have read-only access</strong> exclusively to their specific deal document and utility bills.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>Administrative actions</strong> (creating units, adjusting tariffs, confirming offline payments) require cryptographic owner claim tokens.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold font-bold">✓</span>
+            <span><strong>Commercial / Residential partitioning</strong> ensures shopping plaza shops and private flats remain isolated inside separate property contexts.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Zero Ongoing Hosting Bills (Spark Free Tier Proof) -->
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-brand-border-light shadow-card space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2.5 rounded-xl bg-brand-teal text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark font-heading">
+          Why Firebase Free Tier Really Is ₹0/Month Forever
+        </h2>
+      </div>
+
+      <p class="text-sm text-gray-600 leading-relaxed">
+        Skeptical buyers frequently ask: <em>"How can Google Firebase host my software without charging me every month?"</em> 
+        Here is the exact mathematical proof based on Google's published Firebase Spark plan:
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-4 text-center">
+        <div class="p-5 rounded-2xl bg-brand-surface border border-gray-100">
+          <div class="text-xs font-semibold text-gray-500 uppercase">Google Free Quota</div>
+          <div class="text-2xl font-extrabold text-brand-teal mt-1">50,000</div>
+          <div class="text-xs text-gray-600 mt-1">Reads every single day</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-brand-surface border border-gray-100">
+          <div class="text-xs font-semibold text-gray-500 uppercase">A 30-Unit Building Uses</div>
+          <div class="text-2xl font-extrabold text-brand-gold mt-1">~600–1,200</div>
+          <div class="text-xs text-gray-600 mt-1">Reads per day (~2.4% quota)</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-brand-surface border border-gray-100">
+          <div class="text-xs font-semibold text-gray-500 uppercase">Monthly Hosting Cost</div>
+          <div class="text-2xl font-extrabold text-emerald-600 mt-1">₹0.00</div>
+          <div class="text-xs text-gray-600 mt-1">Forever within free tier</div>
+        </div>
+      </div>
+
+      <p class="text-xs text-gray-500">
+        Because Firestore local caching stores the ledger directly on the tenant and admin devices, normal daily app launches don't re-download historical months unless a balance change is detected.
+      </p>
+    </div>
+
+    <!-- Pillar 4: Backups & Local Data Exports -->
+    <div class="bg-brand-dark text-white rounded-3xl p-8 sm:p-12 border border-brand-gold/30 space-y-6">
+      <h2 class="text-2xl font-bold font-heading text-white">Full 1-Click Backups & Export Freedom</h2>
+      <p class="text-sm text-gray-300">
+        Your data is never trapped in a proprietary closed container. At any moment, Rentlyo Admin Console allows you to export your complete operational ledger:
+      </p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-brand-dark-surface border border-brand-border-dark space-y-1">
+          <div class="font-bold text-brand-gold text-sm">PDF Ledger Statements</div>
+          <p class="text-xs text-gray-400">Formatted tenant payment statements ready for legal court records or rent agreement renewals.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-brand-dark-surface border border-brand-border-dark space-y-1">
+          <div class="font-bold text-brand-gold text-sm">Excel / CSV Datasets</div>
+          <p class="text-xs text-gray-400">Raw transaction sheets compatible with your Chartered Accountant's Tally or Excel workflow.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-brand-dark-surface border border-brand-border-dark space-y-1">
+          <div class="font-bold text-brand-gold text-sm">Firebase JSON Dump</div>
+          <p class="text-xs text-gray-400">Native database backup through Google Cloud Console for complete disaster recovery.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center py-6 space-y-5">
+      <h2 class="text-2xl font-bold text-brand-dark font-heading">Have specific security or architectural questions?</h2>
+      <p class="text-sm text-gray-600 max-w-xl mx-auto">
+        Speak directly with lead engineer and founder Aaryan Gupta. We are transparent about every line of code and database rule.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary py-3.5 px-8 text-sm" data-track-event="demo_apk_download" data-track-label="Security Bottom Download">
+          Download Demo APK
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20have%20a%20question%20regarding%20Rentlyo%20data%20security." target="_blank" rel="noopener" class="btn-gold py-3.5 px-8 text-sm" data-track-event="whatsapp_click" data-track-label="Security WhatsApp CTA">
+          Chat with the Engineer (+91 62056 50368)
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-gray-400 text-xs py-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+      <p>© 2026 Rentlyo. Engineered by Aaryan Gupta. Verified at Arya Plaza, Munger.</p>
+      <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-500">
+        <a href="../" class="hover:text-brand-gold">Home</a>
+        <span>•</span>
+        <a href="../features/" class="hover:text-brand-gold">Features</a>
+        <span>•</span>
+        <a href="../pricing/" class="hover:text-brand-gold">Pricing</a>
+        <span>•</span>
+        <a href="../case-study/arya-plaza-munger/" class="hover:text-brand-gold">Case Study</a>
+        <span>•</span>
+        <a href="../security/" class="text-brand-gold">Security</a>
+        <span>•</span>
+        <a href="../changelog/" class="hover:text-brand-gold">Changelog</a>
+        <span>•</span>
+        <a href="../contact/" class="hover:text-brand-gold">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

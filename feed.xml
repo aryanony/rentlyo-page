@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rentlyo Property Management &amp; Real Estate Insights</title>
+    <link>https://rentlyo.cscouncil.in/blog/</link>
+    <description>Practical guides on rental operations, sub-meter electricity billing, lease agreements, and one-time purchase property management software in India.</description>
+    <language>en-in</language>
+    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://rentlyo.cscouncil.in/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Why One-Time Purchase Property Management Beats Monthly Subscriptions</title>
+      <link>https://rentlyo.cscouncil.in/blog/one-time-purchase-vs-subscription/</link>
+      <guid>https://rentlyo.cscouncil.in/blog/one-time-purchase-vs-subscription/</guid>
+      <pubDate>Mon, 15 Sep 2026 09:00:00 +0530</pubDate>
+      <description>The real financial and operational differences between renting your landlord software for ₹1,999/mo versus owning your ledger outright for a one-time ₹20,000 fee.</description>
+    </item>
+
+    <item>
+      <title>The Definitive Rent Agreement Checklist for Indian Landlords (2026)</title>
+      <link>https://rentlyo.cscouncil.in/blog/rent-agreement-checklist-indian-landlords/</link>
+      <guid>https://rentlyo.cscouncil.in/blog/rent-agreement-checklist-indian-landlords/</guid>
+      <pubDate>Thu, 10 Sep 2026 11:30:00 +0530</pubDate>
+      <description>Essential clauses every Indian landlord must include: sub-meter electricity terms, maintenance deposit deductions, step-up escalation clauses, and lock-in periods.</description>
+    </item>
+  </channel>
+</rss>
