@@ -258,38 +258,64 @@
   </div>
 
   <!-- Primary Header & Navigation (Slim Modern Magic Header) -->
-  <header class="magic-header sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-border-light shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="./" class="flex items-center gap-3 group focus-visible:ring-brand-gold">
+  <header class="magic-header sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-border-light shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="./" class="flex items-center gap-3 shrink-0 group focus-visible:ring-brand-gold">
         <img src="assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto transition-transform duration-300 group-hover:scale-105" width="130" height="36">
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-5 lg:gap-6 text-xs sm:text-sm font-medium text-gray-600">
-        <a href="features/" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_features">Features</a>
-        <a href="#calculator" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_calculator">Calculator</a>
-        <a href="pricing/" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_pricing">Pricing</a>
-        <a href="case-study/arya-plaza-munger/" class="nav-link-modern hover:text-brand-teal">Case Study</a>
-        <a href="security/" class="nav-link-modern hover:text-brand-teal">Security</a>
-        <a href="changelog/" class="nav-link-modern hover:text-brand-teal">Changelog</a>
-        <a href="demo/" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_demo">Demo APK</a>
-        <a href="faq/" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_faq">FAQ</a>
-        <a href="contact/" class="nav-link-modern hover:text-brand-teal" data-i18n="nav_contact">Contact</a>
+      <!-- Desktop Nav (Curated & Balanced for 15.6" Displays) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs sm:text-sm font-medium text-gray-600">
+        <a href="features/" class="nav-link-modern hover:text-brand-teal transition-colors" data-i18n="nav_features">Features</a>
+        <a href="#calculator" class="nav-link-modern hover:text-brand-teal transition-colors" data-i18n="nav_calculator">Calculator</a>
+        <a href="pricing/" class="nav-link-modern hover:text-brand-teal transition-colors" data-i18n="nav_pricing">Pricing</a>
+        <a href="case-study/arya-plaza-munger/" class="nav-link-modern hover:text-brand-teal transition-colors whitespace-nowrap">Case Study</a>
+        <a href="security/" class="nav-link-modern hover:text-brand-teal transition-colors whitespace-nowrap">Security</a>
+
+        <!-- Explore Dropdown -->
+        <div class="relative group">
+          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1.5 focus:outline-none py-1.5" aria-expanded="false">
+            <span>Explore</span>
+            <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-teal transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          
+          <div class="absolute top-full left-0 mt-1.5 w-60 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
+            <a href="changelog/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+              <span>Changelog & Updates</span>
+            </a>
+            <a href="compare/rentlyo-vs-subscription-software/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-brand-teal"></span>
+              <span>Rentlyo vs. SaaS Software</span>
+            </a>
+            <a href="compare/rentlyo-vs-excel-register/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+              <span>Rentlyo vs. Excel / Paper</span>
+            </a>
+            <div class="my-1 border-t border-gray-100"></div>
+            <a href="faq/" class="flex items-center gap-2.5 px-4 py-2 text-xs text-gray-600 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span>Frequently Asked Questions</span>
+            </a>
+            <a href="contact/" class="flex items-center gap-2.5 px-4 py-2 text-xs text-gray-600 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span>Contact Founder Aaryan</span>
+            </a>
+          </div>
+        </div>
       </nav>
 
       <!-- Desktop Action Buttons -->
-      <div class="hidden lg:flex items-center gap-2.5">
-        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5 shadow-sm hover:shadow-md" data-track-event="demo_apk_download" data-track-label="Header APK Download">
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
+        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5 shadow-sm hover:shadow-md whitespace-nowrap" data-track-event="demo_apk_download" data-track-label="Header APK Download">
           <svg class="w-3.5 h-3.5 mr-1 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           <span data-i18n="cta_download_demo">Demo APK</span>
         </a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20deploying%20Rentlyo%20for%20my%20property." target="_blank" rel="noopener" class="btn-gold text-xs py-2 px-3.5 shadow-sm hover:shadow-glow" data-track-event="whatsapp_click" data-track-label="Header WhatsApp">
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20deploying%20Rentlyo%20for%20my%20property." target="_blank" rel="noopener" class="btn-gold text-xs py-2 px-3.5 shadow-sm hover:shadow-glow whitespace-nowrap" data-track-event="whatsapp_click" data-track-label="Header WhatsApp">
           <span data-i18n="cta_whatsapp">WhatsApp</span>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <div class="flex items-center md:hidden">
+      <!-- Mobile & Tablet Menu Button (Visible below lg) -->
+      <div class="flex items-center lg:hidden">
         <button type="button" id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-brand-teal rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
         </button>
@@ -297,14 +323,15 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-border-light px-4 pt-2 pb-6 space-y-3">
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-brand-border-light px-4 pt-2 pb-6 space-y-3 shadow-lg">
       <a href="features/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_features">Features</a>
       <a href="#calculator" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_calculator">ROI Calculator</a>
       <a href="pricing/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_pricing">Pricing</a>
       <a href="case-study/arya-plaza-munger/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Arya Plaza Case Study</a>
       <a href="security/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Security & Data Architecture</a>
       <a href="changelog/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Release Changelog</a>
-      <a href="demo/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_demo">Demo APK</a>
+      <a href="compare/rentlyo-vs-subscription-software/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Rentlyo vs. SaaS</a>
+      <a href="compare/rentlyo-vs-excel-register/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Rentlyo vs. Excel</a>
       <a href="faq/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_faq">FAQ</a>
       <a href="contact/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_contact">Contact</a>
       <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
@@ -318,177 +345,179 @@
     </div>
   </header>
 
-  <!-- SECTION 1: HERO -->
-  <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-brand-surface via-white to-brand-surface">
+  <!-- SECTION 1: HERO (Balanced 2-Column Responsive Layout) -->
+  <section id="hero" class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-brand-surface via-white to-brand-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
+        
         <!-- Hero Left Column: Copy & Actions -->
-        <div class="lg:col-span-7 space-y-8">
+        <div class="lg:col-span-6 xl:col-span-7 space-y-6 lg:space-y-7">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-dark text-xs sm:text-sm font-semibold badge-glow-anim shadow-sm">
             <span class="w-2 h-2 rounded-full bg-brand-gold pulse-live-glow"></span>
             <span data-i18n="hero_badge">One-Time Purchase • Lifetime Ownership • Zero Subscriptions</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-tight">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.15]">
             <span data-i18n="hero_headline">Run your rent on software you own — not a subscription you rent.</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-gray-600 max-w-2xl leading-relaxed" data-i18n="hero_subline">
+          <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed" data-i18n="hero_subline">
             A complete, white-label Android property management platform for owners with 5–50 units. One-time ₹20,000. No monthly fee. No per-tenant fee. Zero server bills.
           </p>
 
           <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-base px-8 py-4 shadow-lg shadow-brand-teal/25 hover:shadow-xl hover:shadow-brand-teal/35" data-track-event="demo_apk_download" data-track-label="Hero Primary APK">
-              <svg class="w-5 h-5 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+            <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 shadow-lg shadow-brand-teal/25 hover:shadow-xl hover:shadow-brand-teal/35 text-center" data-track-event="demo_apk_download" data-track-label="Hero Primary APK">
+              <svg class="w-5 h-5 mr-2 text-brand-gold inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
               <span data-i18n="cta_download_demo">Download Demo APK</span>
             </a>
-            <a href="#pricing" class="btn-secondary text-base px-8 py-4 hover-lift" data-track-event="pricing_view" data-track-label="Hero See Pricing">
+            <a href="#pricing" class="btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 hover-lift text-center" data-track-event="pricing_view" data-track-label="Hero See Pricing">
               <span data-i18n="cta_see_pricing">See Pricing (₹20,000)</span>
             </a>
-          <!-- Live Availability / WhatsApp Response Indicator -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-medium shadow-sm">
-            <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
-            </span>
-            <span>Typically replies within 2 hours on WhatsApp (+91 62056 50368)</span>
           </div>
 
-          <!-- Trust Strip -->
-          <div class="pt-6 border-t border-gray-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs sm:text-sm">
-            <div class="flex items-center gap-2">
+          <!-- Live Availability / WhatsApp Response Indicator -->
+          <div>
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-medium shadow-sm">
+              <span class="relative flex h-2.5 w-2.5 shrink-0">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+              </span>
+              <span>Typically replies within 2 hours on WhatsApp (+91 62056 50368)</span>
+            </div>
+          </div>
+
+          <!-- Trust Strip: Clean Flex Wrap with No-Wrap Badges -->
+          <div class="pt-5 border-t border-gray-200/80 flex flex-wrap items-center gap-x-5 sm:gap-x-6 gap-y-2.5 text-xs sm:text-sm">
+            <div class="inline-flex items-center gap-1.5 whitespace-nowrap">
               <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
               <span class="font-semibold text-gray-900" data-i18n="trust_price">One-time ₹20,000</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="inline-flex items-center gap-1.5 whitespace-nowrap">
               <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
               <span class="font-medium text-gray-700" data-i18n="trust_no_monthly">No monthly fee</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="inline-flex items-center gap-1.5 whitespace-nowrap">
               <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="font-medium text-gray-700" data-i18n="trust_no_server">No server cost</span>
+              <span class="font-medium text-gray-700" data-i18n="trust_no_server">₹0/mo Firebase tier</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="inline-flex items-center gap-1.5 whitespace-nowrap">
               <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="font-medium text-gray-700" data-i18n="trust_live_proof">Live at Arya Plaza</span>
+              <a href="case-study/arya-plaza-munger/" class="font-medium text-brand-teal hover:underline" data-i18n="trust_live_proof">Live at Arya Plaza, Munger ↗</a>
             </div>
           </div>
         </div>
 
-        <!-- Hero Right Column: High-Fidelity Interactive Dual-App Device Showcase -->
-        <div class="lg:col-span-5 relative">
+        <!-- Hero Right Column: Balanced Dual Device Showcase for 15.6" Laptop Screens -->
+        <div class="lg:col-span-6 xl:col-span-5 relative flex items-center justify-center pt-6 lg:pt-0">
           <!-- Ambient Glow Backdrop -->
-          <div class="absolute -top-10 -right-10 w-80 h-80 bg-brand-gold/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute -bottom-10 -left-10 w-80 h-80 bg-brand-teal/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -top-10 -right-10 w-72 h-72 bg-brand-gold/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-teal/15 rounded-full blur-3xl pointer-events-none"></div>
 
-          <!-- Dual Device Card Mockup with Gentle Float -->
-          <div class="relative z-10 flex flex-col sm:flex-row gap-4 items-center justify-center animate-subtle-float">
+          <!-- Dual Device Mockups with Natural Side-by-Side Responsive Framing -->
+          <div class="relative z-10 flex flex-row gap-3 sm:gap-4 items-center justify-center animate-subtle-float max-w-full">
             
             <!-- Phone 1: Tenant Companion App Mockup -->
-            <div class="w-full max-w-[280px] bg-brand-dark rounded-[36px] p-3 shadow-2xl border-4 border-gray-800 transform sm:-rotate-2 hover:rotate-0 transition-all duration-300 hover-lift">
-              <div class="w-24 h-4 bg-gray-900 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <div class="w-8 h-1 bg-gray-700 rounded-full"></div>
+            <div class="w-[200px] sm:w-[240px] xl:w-[260px] bg-brand-dark rounded-[28px] sm:rounded-[36px] p-2.5 sm:p-3 shadow-2xl border-2 sm:border-4 border-gray-800 transform -rotate-1 hover:rotate-0 transition-all duration-300 hover-lift shrink-0">
+              <div class="w-16 sm:w-20 h-3 bg-gray-900 rounded-full mx-auto mb-2 flex items-center justify-center">
+                <div class="w-6 h-1 bg-gray-700 rounded-full"></div>
               </div>
 
-              <div class="bg-[#0b2833] rounded-[28px] p-4 text-white space-y-3.5 border border-white/10">
-                <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
-                  <div class="flex items-center gap-2">
-                    <img src="assets/rentlyo-icon.svg" class="w-6 h-6" alt="Icon">
+              <div class="bg-[#0b2833] rounded-[22px] sm:rounded-[28px] p-3 sm:p-4 text-white space-y-2.5 sm:space-y-3.5 border border-white/10">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div class="flex items-center gap-1.5">
+                    <img src="assets/rentlyo-icon.svg" class="w-5 h-5" alt="Icon">
                     <div>
-                      <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider">Tenant Portal</div>
-                      <div class="text-xs font-bold leading-none">Arya Plaza #204</div>
+                      <div class="text-[9px] text-brand-gold uppercase font-bold tracking-wider">Tenant App</div>
+                      <div class="text-[11px] font-bold leading-none">Arya Plaza #204</div>
                     </div>
                   </div>
-                  <span class="text-[10px] bg-emerald-900/60 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-semibold pulse-live-glow">Active</span>
+                  <span class="text-[9px] bg-emerald-900/60 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded-full font-semibold">Active</span>
                 </div>
 
-                <div class="bg-gradient-to-br from-brand-teal to-[#032d2d] p-3.5 rounded-xl border border-brand-gold/30 shadow-inner">
-                  <div class="text-[11px] text-gray-300 font-medium">Rent Balance & Dues</div>
-                  <div class="text-2xl font-black text-white mt-0.5">₹14,500</div>
-                  <div class="text-[10px] text-emerald-300 mt-1 flex items-center gap-1">
-                    <span>Due: 1st of month</span> • <span>Electricity included</span>
-                  </div>
-                  <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between">
-                    <span class="text-[10px] text-gray-200">UPI 1-Tap Handoff</span>
-                    <span class="text-[10px] font-bold bg-brand-gold text-brand-dark px-2.5 py-1 rounded-lg">Pay Now</span>
-                  </div>
-                </div>
-
-                <div class="space-y-2 text-[11px]">
-                  <div class="bg-white/5 p-2 rounded-lg flex justify-between items-center border border-white/5">
-                    <span class="text-gray-400">Security Advance:</span>
-                    <span class="font-bold text-white">₹30,000 (Protected)</span>
-                  </div>
-                  <div class="bg-white/5 p-2 rounded-lg flex justify-between items-center border border-white/5">
-                    <span class="text-gray-400">Electricity Meter:</span>
-                    <span class="font-bold text-brand-gold">412 kWh (₹9/u)</span>
-                  </div>
-                  <div class="bg-white/5 p-2 rounded-lg flex justify-between items-center border border-white/5">
-                    <span class="text-gray-400">Gate Pass:</span>
-                    <span class="text-emerald-400 font-semibold">Active #GP-889</span>
+                <div class="bg-gradient-to-br from-brand-teal to-[#032d2d] p-2.5 sm:p-3 rounded-xl border border-brand-gold/30 shadow-inner">
+                  <div class="text-[10px] text-gray-300 font-medium">Rent Balance & Dues</div>
+                  <div class="text-xl sm:text-2xl font-black text-white mt-0.5">₹14,500</div>
+                  <div class="text-[9px] text-emerald-300 mt-0.5">Due: 1st of month • Power incl.</div>
+                  <div class="mt-2.5 pt-2 border-t border-white/15 flex items-center justify-between">
+                    <span class="text-[9px] text-gray-200">UPI Handoff</span>
+                    <span class="text-[9px] font-bold bg-brand-gold text-brand-dark px-2 py-0.5 rounded">Pay Now</span>
                   </div>
                 </div>
 
-                <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded-lg flex items-center gap-2 text-[10px] text-emerald-200">
-                  <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                  <span>Auto WhatsApp receipt enabled</span>
+                <div class="space-y-1.5 text-[10px]">
+                  <div class="bg-white/5 p-1.5 rounded-lg flex justify-between items-center">
+                    <span class="text-gray-400">Deposit:</span>
+                    <span class="font-bold text-white">₹30,000</span>
+                  </div>
+                  <div class="bg-white/5 p-1.5 rounded-lg flex justify-between items-center">
+                    <span class="text-gray-400">Sub-Meter:</span>
+                    <span class="font-bold text-brand-gold">412 kWh</span>
+                  </div>
+                  <div class="bg-white/5 p-1.5 rounded-lg flex justify-between items-center">
+                    <span class="text-gray-400">Pass:</span>
+                    <span class="text-emerald-400 font-medium">#GP-889</span>
+                  </div>
+                </div>
+
+                <div class="bg-emerald-900/30 border border-emerald-500/30 p-1.5 rounded-lg flex items-center gap-1.5 text-[9px] text-emerald-200">
+                  <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>WhatsApp receipts</span>
                 </div>
               </div>
             </div>
 
             <!-- Phone 2: Admin Console App Mockup -->
-            <div class="w-full max-w-[280px] bg-brand-dark rounded-[36px] p-3 shadow-2xl border-4 border-gray-800 transform sm:rotate-2 hover:rotate-0 transition-all duration-300 hover-lift">
-              <div class="w-24 h-4 bg-gray-900 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <div class="w-8 h-1 bg-gray-700 rounded-full"></div>
+            <div class="w-[200px] sm:w-[240px] xl:w-[260px] bg-brand-dark rounded-[28px] sm:rounded-[36px] p-2.5 sm:p-3 shadow-2xl border-2 sm:border-4 border-gray-800 transform rotate-1 hover:rotate-0 transition-all duration-300 hover-lift shrink-0">
+              <div class="w-16 sm:w-20 h-3 bg-gray-900 rounded-full mx-auto mb-2 flex items-center justify-center">
+                <div class="w-6 h-1 bg-gray-700 rounded-full"></div>
               </div>
 
-              <div class="bg-[#082029] rounded-[28px] p-4 text-white space-y-3.5 border border-brand-gold/20">
-                <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
-                  <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 rounded-md bg-brand-gold text-brand-dark font-black flex items-center justify-center text-xs shadow-sm">A</div>
+              <div class="bg-[#082029] rounded-[22px] sm:rounded-[28px] p-3 sm:p-4 text-white space-y-2.5 sm:space-y-3.5 border border-brand-gold/20">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-5 h-5 rounded bg-brand-gold text-brand-dark font-black flex items-center justify-center text-[10px]">A</div>
                     <div>
-                      <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider">Admin Console</div>
-                      <div class="text-xs font-bold leading-none">Arya Plaza Dashboard</div>
+                      <div class="text-[9px] text-brand-gold uppercase font-bold tracking-wider">Admin App</div>
+                      <div class="text-[11px] font-bold leading-none">Arya Plaza</div>
                     </div>
                   </div>
-                  <span class="text-[10px] bg-brand-teal text-white px-2 py-0.5 rounded-full font-medium">92% Full</span>
+                  <span class="text-[9px] bg-brand-teal text-white px-1.5 py-0.5 rounded-full font-medium">92% Full</span>
                 </div>
 
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="bg-white/5 p-2.5 rounded-xl border border-white/10">
-                    <div class="text-[10px] text-gray-400">Total Units</div>
-                    <div class="text-lg font-extrabold text-white mt-0.5">25 Units</div>
-                    <div class="text-[9px] text-emerald-400">23 Occupied</div>
+                <div class="grid grid-cols-2 gap-1.5">
+                  <div class="bg-white/5 p-2 rounded-lg">
+                    <div class="text-[9px] text-gray-400">Units</div>
+                    <div class="text-sm sm:text-base font-extrabold text-white">25 Units</div>
                   </div>
-                  <div class="bg-white/5 p-2.5 rounded-xl border border-white/10">
-                    <div class="text-[10px] text-gray-400">Monthly Rent</div>
-                    <div class="text-lg font-extrabold text-brand-gold mt-0.5">₹3.45L</div>
-                    <div class="text-[9px] text-gray-300">Synchronized</div>
+                  <div class="bg-white/5 p-2 rounded-lg">
+                    <div class="text-[9px] text-gray-400">Rent Total</div>
+                    <div class="text-sm sm:text-base font-extrabold text-brand-gold">₹3.45L</div>
                   </div>
                 </div>
 
-                <div class="bg-brand-gold/10 border border-brand-gold/30 p-2.5 rounded-xl space-y-1.5">
-                  <div class="flex justify-between items-center text-[10px]">
-                    <span class="font-bold text-brand-gold uppercase tracking-wider">Pending Confirmations (3)</span>
-                    <span class="text-xs font-bold text-white">Review</span>
+                <div class="bg-brand-gold/10 border border-brand-gold/30 p-2 rounded-lg space-y-1">
+                  <div class="flex justify-between items-center text-[9px]">
+                    <span class="font-bold text-brand-gold uppercase tracking-wider">Pending (3)</span>
+                    <span class="text-[10px] font-bold text-white">Review</span>
                   </div>
-                  <div class="text-[10px] text-gray-200">Shop #102: ₹22,000 UPI reported</div>
-                  <div class="text-[9px] text-gray-400">Flat #301: ₹12,000 Advance top-up</div>
+                  <div class="text-[9px] text-gray-200 truncate">Shop #102: ₹22,000 UPI</div>
+                  <div class="text-[9px] text-gray-400 truncate">Flat #301: ₹12,000 Adv</div>
                 </div>
 
-                <div class="grid grid-cols-3 gap-1.5 text-center text-[9px] pt-1">
-                  <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 font-medium text-gray-300">+ Onboard</div>
-                  <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 font-medium text-gray-300">Meter Calc</div>
-                  <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 font-medium text-gray-300">PDF Report</div>
+                <div class="grid grid-cols-3 gap-1 text-center text-[8px] sm:text-[9px] pt-1">
+                  <div class="bg-white/5 p-1 rounded border border-white/5 text-gray-300">+ Onboard</div>
+                  <div class="bg-white/5 p-1 rounded border border-white/5 text-gray-300">Meter Calc</div>
+                  <div class="bg-white/5 p-1 rounded border border-white/5 text-gray-300">PDF Report</div>
                 </div>
 
-                <div class="text-[9px] text-center text-gray-400">Firestore Secure Rules Active</div>
+                <div class="text-[8px] sm:text-[9px] text-center text-gray-400">Firebase Free Quota Safe</div>
               </div>
             </div>
 
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -568,7 +597,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
         <div class="relative p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover-lift glass-sheen transition duration-300">
           <div class="w-10 h-10 rounded-full bg-brand-teal text-brand-gold font-bold flex items-center justify-center text-lg mb-4 shadow-sm">1</div>
-          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step1_title">1. Add Unit & Terms</h3>
+          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step1_title">Add Unit & Terms</h3>
           <p class="text-sm text-gray-600 leading-relaxed" data-i18n="how_step1_desc">
             Set unit name, monthly rent, advance deposit, electricity meter rates, and optional step-up escalation tiers in the Admin Console.
           </p>
@@ -576,7 +605,7 @@
 
         <div class="relative p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover-lift glass-sheen transition duration-300">
           <div class="w-10 h-10 rounded-full bg-brand-teal text-brand-gold font-bold flex items-center justify-center text-lg mb-4 shadow-sm">2</div>
-          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step2_title">2. Onboard Tenant</h3>
+          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step2_title">Onboard Tenant</h3>
           <p class="text-sm text-gray-600 leading-relaxed" data-i18n="how_step2_desc">
             Install the companion app on the tenant's Android phone. Enter phone number and 6-digit PIN; unit data streams securely in seconds.
           </p>
@@ -584,7 +613,7 @@
 
         <div class="relative p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover-lift glass-sheen transition duration-300">
           <div class="w-10 h-10 rounded-full bg-brand-teal text-brand-gold font-bold flex items-center justify-center text-lg mb-4 shadow-sm">3</div>
-          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step3_title">3. Auto Rent Engine</h3>
+          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step3_title">Auto Rent Engine</h3>
           <p class="text-sm text-gray-600 leading-relaxed" data-i18n="how_step3_desc">
             The shared rent engine computes dues, advance consumption, utility sub-meters, and overdue carryovers identically in both apps.
           </p>
@@ -592,7 +621,7 @@
 
         <div class="relative p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover-lift glass-sheen transition duration-300">
           <div class="w-10 h-10 rounded-full bg-brand-teal text-brand-gold font-bold flex items-center justify-center text-lg mb-4 shadow-sm">4</div>
-          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step4_title">4. Instant Confirmation</h3>
+          <h3 class="text-lg font-bold text-brand-dark mb-2" data-i18n="how_step4_title">Instant Confirmation</h3>
           <p class="text-sm text-gray-600 leading-relaxed" data-i18n="how_step4_desc">
             Tenant reports payment with one-tap UPI handoff and WhatsApp receipt. Admin confirms in one tap; ledger balances instantly.
           </p>
@@ -616,47 +645,59 @@
 
       <!-- Architecture SVG Diagram Card -->
       <div class="bg-brand-dark rounded-3xl p-6 sm:p-12 text-white border border-brand-gold/20 shadow-2xl overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
           <!-- Node 1: Admin Console -->
-          <div class="bg-[#082530] p-6 rounded-2xl border border-brand-gold/30 text-center space-y-3 hover-lift glass-sheen">
-            <div class="w-12 h-12 rounded-xl bg-brand-gold text-brand-dark font-black text-xl flex items-center justify-center mx-auto shadow-glow">
-              A
+          <div class="bg-[#082530] p-6 rounded-2xl border border-brand-gold/30 text-center flex flex-col justify-between hover-lift glass-sheen">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-gold text-brand-dark font-black text-xl flex items-center justify-center mx-auto shadow-glow">
+                A
+              </div>
+              <h3 class="font-bold text-white text-base">Rentlyo Admin Console</h3>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Native Flutter App for Owner/Manager. 6-digit PIN protected. Generates leases, sets tariffs, confirms payments, and publishes notices.
+              </p>
             </div>
-            <h3 class="font-bold text-white text-base">Rentlyo Admin Console</h3>
-            <p class="text-xs text-gray-300 leading-relaxed">
-              Native Flutter App for Owner/Manager. 6-digit PIN protected. Generates leases, sets tariffs, confirms payments, and publishes notices.
-            </p>
-            <span class="inline-block text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20">Full Read/Write Access</span>
+            <div class="mt-4 pt-3 border-t border-white/10">
+              <span class="inline-block text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20">Full Read/Write Access</span>
+            </div>
           </div>
 
           <!-- Node 2: Firebase Backend Cloud -->
-          <div class="bg-gradient-to-b from-[#0e3b4a] to-[#082530] p-6 rounded-2xl border-2 border-brand-teal-light text-center space-y-3 relative hover-lift badge-glow-anim">
-            <div class="w-12 h-12 rounded-xl bg-brand-teal text-brand-gold flex items-center justify-center mx-auto shadow-sm">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.48 12.35c-1.57-4.07-5.96-5.83-8.8-6.19-.24-.03-.43.19-.36.42.59 1.83.69 3.42.3 4.67-.34 1.1-.96 1.94-1.78 2.65-.63.55-1.38.99-2.09 1.58-1.5 1.25-2.87-2.25 4.8.03 2.84 2.22 5.17 5.06 5.34 3.32.2 6.16-2.15 6.47-5.4.11-1.12-.13-2.19-.68-3.13-.15-.25.04-.57.34-.52.92.17 1.82.59 2.57 1.23.27.23.68.04.67-.32-.07-1.87-.66-3.66-1.71-5.13h-.01z"/>
-              </svg>
+          <div class="bg-gradient-to-b from-[#0e3b4a] to-[#082530] p-6 rounded-2xl border-2 border-brand-teal-light text-center flex flex-col justify-between relative hover-lift badge-glow-anim">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-teal text-brand-gold flex items-center justify-center mx-auto shadow-sm">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.48 12.35c-1.57-4.07-5.96-5.83-8.8-6.19-.24-.03-.43.19-.36.42.59 1.83.69 3.42.3 4.67-.34 1.1-.96 1.94-1.78 2.65-.63.55-1.38.99-2.09 1.58-1.5 1.25-2.87-2.25 4.8.03 2.84 2.22 5.17 5.06 5.34 3.32.2 6.16-2.15 6.47-5.4.11-1.12-.13-2.19-.68-3.13-.15-.25.04-.57.34-.52.92.17 1.82.59 2.57 1.23.27.23.68.04.67-.32-.07-1.87-.66-3.66-1.71-5.13h-.01z"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-white text-base">Google Firebase (Free Tier)</h3>
+              <ul class="text-[11px] text-gray-300 space-y-1.5 text-left bg-black/30 p-3 rounded-xl">
+                <li>• <strong>Cloud Firestore:</strong> Real-time streaming ledger</li>
+                <li>• <strong>Firestore Security Rules:</strong> Role boundaries</li>
+                <li>• <strong>Firebase Auth:</strong> Secure phone authentication</li>
+                <li>• <strong>Cloud Messaging:</strong> Rent reminder alerts</li>
+              </ul>
             </div>
-            <h3 class="font-bold text-white text-base">Google Firebase (Free Tier)</h3>
-            <ul class="text-[11px] text-gray-300 space-y-1.5 text-left bg-black/30 p-3 rounded-xl">
-              <li>• <strong>Cloud Firestore:</strong> Real-time streaming ledger</li>
-              <li>• <strong>Firestore Security Rules:</strong> Role boundaries</li>
-              <li>• <strong>Firebase Auth:</strong> Secure phone authentication</li>
-              <li>• <strong>Cloud Messaging:</strong> Rent reminder alerts</li>
-            </ul>
-            <span class="inline-block text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-500/30 font-semibold">₹0/Month Infrastructure</span>
+            <div class="mt-4 pt-3 border-t border-white/10">
+              <span class="inline-block text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-500/30 font-semibold">₹0/Month Infrastructure</span>
+            </div>
           </div>
 
           <!-- Node 3: Tenant Companion App -->
-          <div class="bg-[#082530] p-6 rounded-2xl border border-brand-gold/30 text-center space-y-3 hover-lift glass-sheen">
-            <div class="w-12 h-12 rounded-xl bg-brand-teal text-white font-black text-xl flex items-center justify-center mx-auto shadow-sm">
-              T
+          <div class="bg-[#082530] p-6 rounded-2xl border border-brand-gold/30 text-center flex flex-col justify-between hover-lift glass-sheen">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-teal text-white font-black text-xl flex items-center justify-center mx-auto shadow-sm">
+                T
+              </div>
+              <h3 class="font-bold text-white text-base">Rentlyo Tenant App</h3>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Native Flutter Companion. Scoped exclusively to tenant's unit. One-tap UPI payments, WhatsApp receipts, and digital gate passes.
+              </p>
             </div>
-            <h3 class="font-bold text-white text-base">Rentlyo Tenant App</h3>
-            <p class="text-xs text-gray-300 leading-relaxed">
-              Native Flutter Companion. Scoped exclusively to tenant's unit. One-tap UPI payments, WhatsApp receipts, and digital gate passes.
-            </p>
-            <span class="inline-block text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20">Tenant-Scoped Stream</span>
+            <div class="mt-4 pt-3 border-t border-white/10">
+              <span class="inline-block text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full border border-brand-gold/20">Tenant-Scoped Stream</span>
+            </div>
           </div>
 
         </div>
@@ -745,9 +786,9 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         <!-- Calculator Inputs -->
-        <div class="lg:col-span-6 bg-brand-dark-surface p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6 hover-lift">
+        <div class="lg:col-span-6 bg-brand-dark-surface p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6 hover-lift flex flex-col justify-between h-full">
           <div>
             <div class="flex justify-between items-center mb-2">
               <label for="calc-units" class="text-sm font-semibold text-gray-200" data-i18n="calc_unit_label">Number of rental units / shops:</label>
@@ -883,9 +924,9 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <!-- Inputs Column -->
-          <div class="lg:col-span-6 bg-brand-dark-surface p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6 hover-lift">
+          <div class="lg:col-span-6 bg-brand-dark-surface p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6 hover-lift flex flex-col justify-between h-full">
             <!-- Slider 1: Units -->
             <div>
               <div class="flex justify-between items-center mb-1.5">
@@ -916,7 +957,7 @@
           </div>
 
           <!-- Dynamic Output Card -->
-          <div class="lg:col-span-6 bg-gradient-to-br from-brand-dark-surface to-[#062c33] p-6 sm:p-8 rounded-3xl border border-brand-gold/30 shadow-2xl space-y-6 hover-lift">
+          <div class="lg:col-span-6 bg-gradient-to-br from-brand-dark-surface to-[#062c33] p-6 sm:p-8 rounded-3xl border border-brand-gold/30 shadow-2xl space-y-6 hover-lift flex flex-col justify-between h-full">
             <div class="flex items-center justify-between border-b border-white/10 pb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Projected Operational Return</span>
               <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">~80% Routine Admin Cut</span>
@@ -1114,6 +1155,7 @@
         <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">
           Watch Rentlyo in action before deciding
         </h2>
+      </div>
       <!-- Interactive Demo Sandbox Card -->
       <div class="mb-12 bg-white rounded-3xl p-6 sm:p-8 border border-brand-border-light shadow-card space-y-6 hover-lift">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-gray-100">

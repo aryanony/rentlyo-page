@@ -46,13 +46,13 @@
       // How It Works
       "how_eyebrow": "Simple 4-Step Flow",
       "how_title": "How Rentlyo streamlines your rental operations",
-      "how_step1_title": "1. Add Unit & Lease Terms",
+      "how_step1_title": "Add Unit & Lease Terms",
       "how_step1_desc": "Set unit name, monthly rent, advance deposit, electricity meter rates, and optional step-up escalation tiers in the Admin Console.",
-      "how_step2_title": "2. Tenant Logs In Privately",
+      "how_step2_title": "Tenant Logs In Privately",
       "how_step2_desc": "Tenant installs their branded Rentlyo app and unlocks with their phone and 6-digit PIN. No complex registration required.",
-      "how_step3_title": "3. Rent Calculates Automatically",
+      "how_step3_title": "Rent Calculates Automatically",
       "how_step3_desc": "The shared rent engine computes dues, advance consumption, utility sub-meters, and overdue carryovers identically in both apps.",
-      "how_step4_title": "4. Instant Confirmation & Ledger",
+      "how_step4_title": "Instant Confirmation & Ledger",
       "how_step4_desc": "Tenant reports payment with one-tap UPI handoff and WhatsApp receipt. Admin confirms in one tap; ledger balances instantly.",
 
       // Two Apps
@@ -161,13 +161,13 @@
       // How It Works
       "how_eyebrow": "आसान 4 चरण",
       "how_title": "रेंटलीयो आपके किराए के काम को कैसे आसान बनाता है",
-      "how_step1_title": "1. यूनिट और शर्तें दर्ज करें",
+      "how_step1_title": "यूनिट और शर्तें दर्ज करें",
       "how_step1_desc": "एडमिन ऐप में दुकान/फ्लैट का नाम, मासिक किराया, सिक्योरिटी डिपॉजिट, बिजली सब-मीटर दर और किराया वृद्धि दर सेट करें।",
-      "how_step2_title": "2. किराएदार ऐप में लॉग इन करें",
+      "how_step2_title": "किराएदार ऐप में लॉग इन करें",
       "how_step2_desc": "किराएदार अपने नाम का ऐप डाउनलोड करते हैं और अपने फोन नंबर व 6-अंकों के सुरक्षित पिन से आसानी से लॉग इन करते हैं।",
-      "how_step3_title": "3. किराया अपने आप कैलकुलेट होता है",
+      "how_step3_title": "किराया अपने आप कैलकुलेट होता है",
       "how_step3_desc": "रेंटलीयो का सटीक इंजन बकाया, एडवांस एडजस्टमेंट और बिजली बिल दोनों ऐप्स में रीयल-टाइम में एक समान दिखाता है।",
-      "how_step4_title": "4. यूपीआई से भुगतान और तुरंत रसीद",
+      "how_step4_title": "यूपीआई से भुगतान और तुरंत रसीद",
       "how_step4_desc": "किराएदार 1-क्लिक यूपीआई से भुगतान करके व्हाट्सएप रसीद भेजते हैं। एडमिन 1-टैप में पुष्टि करता है; खाता तुरंत अपडेट होता है।",
 
       // Two Apps
