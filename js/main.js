@@ -34,18 +34,61 @@
     // 1. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    function openMobileMenu() {
+      if (!mobileMenu || !mobileMenuBtn) return;
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.remove('hidden');
+      if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+      if (closeIcon) closeIcon.classList.remove('hidden');
+    }
+
+    function closeMobileMenu() {
+      if (!mobileMenu || !mobileMenuBtn) return;
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.add('hidden');
+      if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+      if (closeIcon) closeIcon.classList.add('hidden');
+    }
+
+    function toggleMobileMenu() {
+      if (!mobileMenu) return;
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    }
+
     if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-        mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
       });
 
+      // Close menu when clicking any link inside it
       mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          closeMobileMenu();
         });
+      });
+
+      // Close on click outside header and menu
+      document.addEventListener('click', (e) => {
+        const header = mobileMenuBtn.closest('header');
+        if (header && !header.contains(e.target)) {
+          closeMobileMenu();
+        }
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeMobileMenu();
+        }
       });
     }
 

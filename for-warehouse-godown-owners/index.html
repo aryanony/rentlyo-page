@@ -87,20 +87,106 @@
       <a href="../" class="flex items-center gap-3">
         <img src="../assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto" width="130" height="36">
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium text-gray-600">
-        <a href="../features/" class="nav-link-modern hover:text-brand-teal">Features</a>
-        <a href="../pricing/" class="nav-link-modern hover:text-brand-teal">Pricing</a>
-        <a href="../demo/" class="nav-link-modern hover:text-brand-teal">Demo APK</a>
-        <a href="../case-study/arya-plaza-munger/" class="nav-link-modern hover:text-brand-teal">Case Study</a>
-        <a href="../security/" class="nav-link-modern hover:text-brand-teal">Security</a>
-        <a href="../faq/" class="nav-link-modern hover:text-brand-teal">FAQ</a>
-        <a href="../contact/" class="nav-link-modern hover:text-brand-teal">Contact</a>
+      <nav class="hidden lg:flex items-center gap-7 text-xs sm:text-sm font-medium text-gray-600">
+        <a href="../features/" class="nav-link-modern hover:text-brand-teal transition-colors">Features</a>
+        <a href="../#calculator" class="nav-link-modern hover:text-brand-teal transition-colors">ROI Calculator</a>
+        <a href="../pricing/" class="nav-link-modern hover:text-brand-teal transition-colors">Pricing (₹20,000)</a>
+        <a href="../demo/" class="nav-link-modern hover:text-brand-teal transition-colors">Demo</a>
+        <a href="../case-study/arya-plaza-munger/" class="nav-link-modern hover:text-brand-teal transition-colors">Case Study</a>
+        <a href="../security/" class="nav-link-modern hover:text-brand-teal transition-colors">Security</a>
+        
+        <!-- Dropdown Menu for Explore -->
+        <div class="relative group">
+          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1.5 focus:outline-none py-1.5" aria-expanded="false">
+            <span>Explore</span>
+            <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-teal transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full left-0 mt-1.5 w-60 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
+            <a href="../changelog/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+              <span>Changelog & Updates</span>
+            </a>
+            <a href="../compare/rentlyo-vs-subscription-software/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-brand-teal"></span>
+              <span>Rentlyo vs. SaaS Software</span>
+            </a>
+            <a href="../compare/rentlyo-vs-excel-register/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+              <span>Rentlyo vs. Excel / Paper</span>
+            </a>
+            <a href="../blog/" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span>Landlord Blog & Guides</span>
+            </a>
+            <div class="my-1 border-t border-gray-100"></div>
+            <a href="../faq/" class="flex items-center gap-2.5 px-4 py-2 text-xs text-gray-600 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span>Frequently Asked Questions</span>
+            </a>
+            <a href="../contact/" class="flex items-center gap-2.5 px-4 py-2 text-xs text-gray-600 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span>Contact Founder Aaryan</span>
+            </a>
+          </div>
+        </div>
       </nav>
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5" data-track-event="demo_apk_download" data-track-label="Warehouse Header Demo">Demo APK</a>
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
+        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5 shadow-sm hover:shadow-md whitespace-nowrap" data-track-event="demo_apk_download" data-track-label="Warehouse Header Demo">
+          <svg class="w-3.5 h-3.5 mr-1 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Demo APK</span>
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20deploying%20Rentlyo%20for%20my%20property." target="_blank" rel="noopener" class="btn-gold text-xs py-2 px-3.5 shadow-sm hover:shadow-glow whitespace-nowrap">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Mobile & Tablet Menu Button -->
+      <div class="flex items-center lg:hidden">
+        <button type="button" id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-brand-teal rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-b border-brand-border-light px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto">
+      <div class="space-y-1 text-sm font-medium text-gray-700">
+        <a href="../" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Home</a>
+        <a href="../features/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Features</a>
+        <a href="../#calculator" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">ROI Calculator</a>
+        <a href="../pricing/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Pricing (₹20,000)</a>
+        <a href="../demo/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Demo APK & Tour</a>
+        <a href="../case-study/arya-plaza-munger/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Arya Plaza Case Study</a>
+        <a href="../security/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Security & Firebase</a>
+        <a href="../changelog/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Release Changelog</a>
+        <a href="../blog/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Landlord Guides & Blog</a>
+
+        <div class="pt-2 pb-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider px-3">Compare & Explore</div>
+        <a href="../compare/rentlyo-vs-subscription-software/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Rentlyo vs. SaaS Subscriptions</a>
+        <a href="../compare/rentlyo-vs-excel-register/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Rentlyo vs. Excel / Paper</a>
+        <a href="../faq/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Frequently Asked Questions</a>
+        <a href="../contact/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Contact Founder Aaryan</a>
+      </div>
+      <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
+        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary w-full text-center text-xs py-2.5 shadow-sm" data-track-event="demo_apk_download" data-track-label="Warehouse Mobile Menu Demo">
+          Download Demo APK
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20Rentlyo." target="_blank" rel="noopener" class="btn-gold w-full text-center text-xs py-2.5 shadow-sm">
+          Chat on WhatsApp (+91 62056 50368)
+        </a>
       </div>
     </div>
   </header>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <nav class="flex items-center gap-2 text-xs text-gray-500 font-medium" aria-label="Breadcrumb">
+      <a href="../" class="hover:text-brand-teal transition">Home</a>
+      <span>/</span>
+      <span class="text-gray-400">Solutions</span>
+      <span>/</span>
+      <span class="text-brand-dark font-semibold">Warehouses & Godowns</span>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="py-16 bg-brand-dark text-white text-center relative overflow-hidden">
@@ -191,26 +277,90 @@
       </div>
     </div>
 
+    <!-- Related Cross Links -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      <a href="../pricing/" class="p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover:shadow-md hover:border-brand-gold/50 transition group space-y-2">
+        <div class="text-xs font-bold text-brand-gold uppercase tracking-wider">Pricing</div>
+        <h3 class="text-base font-bold text-brand-dark group-hover:text-brand-gold transition">₹20,000 Flat License →</h3>
+        <p class="text-xs text-gray-500">No monthly SaaS fees, regardless of warehouse square footage or rental amounts.</p>
+      </a>
+      <a href="../demo/" class="p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover:shadow-md hover:border-brand-gold/50 transition group space-y-2">
+        <div class="text-xs font-bold text-brand-teal uppercase tracking-wider">Live Testing</div>
+        <h3 class="text-base font-bold text-brand-dark group-hover:text-brand-teal transition">Download Demo APK →</h3>
+        <p class="text-xs text-gray-500">Experience the tenant companion app with 3-phase power tracking and GST invoices.</p>
+      </a>
+      <a href="../case-study/arya-plaza-munger/" class="p-6 bg-white rounded-2xl border border-brand-border-light shadow-sm hover:shadow-md hover:border-brand-gold/50 transition group space-y-2">
+        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Field Proven</div>
+        <h3 class="text-base font-bold text-brand-dark group-hover:text-emerald-700 transition">Arya Plaza, Munger →</h3>
+        <p class="text-xs text-gray-500">25+ commercial properties running live with 99.8% on-time rent collections.</p>
+      </a>
+    </div>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-brand-dark text-gray-400 text-xs py-10 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
-      <p>© 2026 Rentlyo. Engineered by Aaryan Gupta. Verified at Arya Plaza, Munger.</p>
-      <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-500">
-        <a href="../" class="hover:text-brand-gold">Home</a>
-        <span>•</span>
-        <a href="../features/" class="hover:text-brand-gold">Features</a>
-        <span>•</span>
-        <a href="../pricing/" class="hover:text-brand-gold">Pricing</a>
-        <span>•</span>
-        <a href="../case-study/arya-plaza-munger/" class="hover:text-brand-gold">Case Study</a>
-        <span>•</span>
-        <a href="../security/" class="hover:text-brand-gold">Security</a>
-        <span>•</span>
-        <a href="../changelog/" class="hover:text-brand-gold">Changelog</a>
-        <span>•</span>
-        <a href="../contact/" class="hover:text-brand-gold">Contact</a>
+  <!-- Universal Footer -->
+  <footer class="bg-brand-dark text-gray-400 text-xs py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <a href="../" class="inline-block">
+          <img src="../assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 w-auto brightness-0 invert" width="130" height="36">
+        </a>
+        <p class="text-gray-400 text-xs leading-relaxed">
+          One-time purchase property management system. Native Flutter Admin and Tenant Companion apps with private Google Firebase cloud backend. Zero monthly subscriptions.
+        </p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Flat ₹20,000 Lifetime License
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Core Platform</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="../features/" class="hover:text-brand-gold transition">Features & Capabilities</a></li>
+          <li><a href="../pricing/" class="hover:text-brand-gold transition">Pricing (₹20,000 Flat)</a></li>
+          <li><a href="../demo/" class="hover:text-brand-gold transition">Interactive Demo & APKs</a></li>
+          <li><a href="../case-study/arya-plaza-munger/" class="hover:text-brand-gold transition">Arya Plaza Case Study</a></li>
+          <li><a href="../security/" class="hover:text-brand-gold transition">Security & Data Architecture</a></li>
+          <li><a href="../changelog/" class="hover:text-brand-gold transition">Release Notes & Changelog</a></li>
+          <li><a href="../faq/" class="hover:text-brand-gold transition">Frequently Asked Questions</a></li>
+          <li><a href="../contact/" class="hover:text-brand-gold transition">Contact Founder Aaryan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Solutions & Verticals</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="../for-property-owners/" class="hover:text-brand-gold transition">Residential Landlords (5–50 units)</a></li>
+          <li><a href="../for-commercial-complex/" class="hover:text-brand-gold transition">Commercial Shopping Plazas</a></li>
+          <li><a href="../for-pg-hostel-owners/" class="hover:text-brand-gold transition">PG & Hostel Operators</a></li>
+          <li><a href="../for-society-management/" class="hover:text-brand-gold transition">Housing Societies & RWAs</a></li>
+          <li><a href="../for-warehouse-godown-owners/" class="hover:text-brand-gold transition text-brand-gold font-bold">Warehouses & Godowns</a></li>
+          <li><a href="../for-coworking-spaces/" class="hover:text-brand-gold transition">Coworking Spaces</a></li>
+          <li><a href="../for-shop-owners-market-complex/" class="hover:text-brand-gold transition">Market Complex Operators</a></li>
+          <li><a href="../blog/" class="hover:text-brand-gold transition">Articles & Guides</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Direct Contact</h4>
+        <ul class="space-y-2 text-xs">
+          <li>Founder: <strong class="text-white">Aaryan Gupta</strong></li>
+          <li>Phone: <a href="tel:+916205650368" class="hover:text-brand-gold transition">+91 62056 50368</a></li>
+          <li>WhatsApp: <a href="https://wa.me/916205650368" class="hover:text-brand-gold transition">+91 62056 50368</a></li>
+          <li>Email: <a href="mailto:aaryangupta.pm@gmail.com" class="hover:text-brand-gold transition">aaryangupta.pm@gmail.com</a></li>
+          <li>Address: Arya Plaza, Munger, Bihar, India</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+      <p>© 2026 Rentlyo. Built by Aaryan Gupta. All rights reserved.</p>
+      <div class="flex flex-wrap gap-4 mt-2 sm:mt-0">
+        <a href="../feed.xml" class="hover:text-gray-400">RSS Feed</a>
+        <a href="../llms.txt" class="hover:text-gray-400">llms.txt</a>
+        <a href="../sitemap.xml" class="hover:text-gray-400">Sitemap</a>
+        <a href="../robots.txt" class="hover:text-gray-400">Robots</a>
       </div>
     </div>
   </footer>

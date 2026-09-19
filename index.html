@@ -317,28 +317,37 @@
       <!-- Mobile & Tablet Menu Button (Visible below lg) -->
       <div class="flex items-center lg:hidden">
         <button type="button" id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-brand-teal rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-brand-border-light px-4 pt-2 pb-6 space-y-3 shadow-lg">
-      <a href="features/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_features">Features</a>
-      <a href="#calculator" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_calculator">ROI Calculator</a>
-      <a href="pricing/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_pricing">Pricing</a>
-      <a href="case-study/arya-plaza-munger/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Arya Plaza Case Study</a>
-      <a href="security/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Security & Data Architecture</a>
-      <a href="changelog/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Release Changelog</a>
-      <a href="compare/rentlyo-vs-subscription-software/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Rentlyo vs. SaaS</a>
-      <a href="compare/rentlyo-vs-excel-register/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal">Rentlyo vs. Excel</a>
-      <a href="faq/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_faq">FAQ</a>
-      <a href="contact/" class="block py-2 text-gray-700 font-medium hover:text-brand-teal" data-i18n="nav_contact">Contact</a>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-b border-brand-border-light px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto">
+      <div class="space-y-1 text-sm font-medium text-gray-700">
+        <a href="./" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal font-bold text-brand-teal transition">Home</a>
+        <a href="features/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition" data-i18n="nav_features">Features</a>
+        <a href="#calculator" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition" data-i18n="nav_calculator">ROI Calculator</a>
+        <a href="pricing/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition" data-i18n="nav_pricing">Pricing (₹20,000)</a>
+        <a href="demo/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Demo APK & Tour</a>
+        <a href="case-study/arya-plaza-munger/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Arya Plaza Case Study</a>
+        <a href="security/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Security & Firebase</a>
+        <a href="changelog/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Release Changelog</a>
+        <a href="blog/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Landlord Guides & Blog</a>
+
+        <div class="pt-2 pb-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider px-3">Compare & Explore</div>
+        <a href="compare/rentlyo-vs-subscription-software/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Rentlyo vs. SaaS Subscriptions</a>
+        <a href="compare/rentlyo-vs-excel-register/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Rentlyo vs. Excel / Paper</a>
+        <a href="faq/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition" data-i18n="nav_faq">Frequently Asked Questions</a>
+        <a href="contact/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition" data-i18n="nav_contact">Contact Founder Aaryan</a>
+      </div>
+
       <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
-        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary w-full text-center text-sm py-3" data-track-event="demo_apk_download">
+        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary w-full text-center text-xs py-2.5 shadow-sm" data-track-event="demo_apk_download">
           <span data-i18n="cta_download_demo">Download Demo APK</span>
         </a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20Rentlyo." target="_blank" rel="noopener" class="btn-gold w-full text-center text-sm py-3" data-track-event="whatsapp_click">
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20Rentlyo." target="_blank" rel="noopener" class="btn-gold w-full text-center text-xs py-2.5 shadow-sm" data-track-event="whatsapp_click">
           <span data-i18n="cta_whatsapp">Chat on WhatsApp (+91 62056 50368)</span>
         </a>
       </div>
@@ -743,7 +752,7 @@
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-brand-border-light shadow-card bg-white">
-        <table class="w-full text-left text-sm">
+        <table class="w-full text-left text-sm min-w-[560px]">
           <thead class="bg-brand-dark text-white text-xs uppercase tracking-wider">
             <tr>
               <th scope="col" class="py-4 px-6 font-semibold">Core Capability</th>
@@ -795,7 +804,7 @@
               <span id="calc-units-display" class="text-2xl font-black text-brand-gold">15</span>
             </div>
             <!-- Quick Presets -->
-            <div class="flex items-center gap-2 mb-3">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
               <span class="text-xs text-gray-400">Quick presets:</span>
               <button type="button" data-calc-preset="10" class="px-2.5 py-1 text-xs rounded-lg bg-white/10 hover:bg-brand-gold hover:text-brand-dark transition font-semibold">10 Units</button>
               <button type="button" data-calc-preset="25" class="px-2.5 py-1 text-xs rounded-lg bg-white/10 hover:bg-brand-gold hover:text-brand-dark transition font-semibold">25 Units</button>

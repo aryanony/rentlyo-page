@@ -19,12 +19,52 @@
 <body class="bg-brand-dark text-white antialiased min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-brand-dark">
 
   <!-- Slim Navigation Bar -->
-  <header class="border-b border-white/10 bg-brand-dark/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 w-auto" width="130" height="36">
+  <header class="magic-header sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="./" class="flex items-center gap-3">
+        <img src="assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto" width="130" height="36">
       </a>
-      <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5">Demo APK</a>
+      <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium text-gray-300">
+        <a href="features/" class="nav-link-modern hover:text-white">Features</a>
+        <a href="pricing/" class="nav-link-modern hover:text-white">Pricing</a>
+        <a href="demo/" class="nav-link-modern hover:text-white">Demo APK</a>
+        <a href="case-study/arya-plaza-munger/" class="nav-link-modern hover:text-white">Case Study</a>
+        <a href="faq/" class="nav-link-modern hover:text-white">FAQ</a>
+        <a href="contact/" class="nav-link-modern hover:text-white">Contact</a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5">Demo APK</a>
+      </div>
+      <!-- Mobile & Tablet Menu Button -->
+      <div class="flex items-center md:hidden">
+        <button type="button" id="mobile-menu-btn" class="p-2 text-gray-300 hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/98 backdrop-blur-xl border-b border-white/10 px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto text-left">
+      <div class="space-y-1 text-sm font-medium text-gray-300">
+        <a href="./" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Home</a>
+        <a href="features/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Features</a>
+        <a href="pricing/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Pricing (₹20,000)</a>
+        <a href="demo/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Demo APK & Tour</a>
+        <a href="case-study/arya-plaza-munger/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Arya Plaza Case Study</a>
+        <a href="security/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Security & Firebase</a>
+        <a href="changelog/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Release Changelog</a>
+        <a href="faq/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">FAQ</a>
+        <a href="contact/" class="block px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">Contact</a>
+      </div>
+      <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+        <a href="downloads/rentlyo-tenant-demo.apk" download class="btn-primary w-full text-center text-xs py-2.5">
+          Download Demo APK
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20hit%20a%20404%20link." target="_blank" rel="noopener" class="btn-gold w-full text-center text-xs py-2.5">
+          WhatsApp (+91 62056 50368)
+        </a>
+      </div>
     </div>
   </header>
 
@@ -66,5 +106,6 @@
     <p>© 2026 Rentlyo Property Management Platform. Engineered by Aaryan Gupta.</p>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
