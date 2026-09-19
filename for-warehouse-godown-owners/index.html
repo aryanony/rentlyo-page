@@ -129,10 +129,29 @@
         </div>
       </nav>
       <div class="hidden lg:flex items-center gap-3 shrink-0">
-        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-xs py-2 px-3.5 shadow-sm hover:shadow-md whitespace-nowrap" data-track-event="demo_apk_download" data-track-label="Warehouse Header Demo">
-          <svg class="w-3.5 h-3.5 mr-1 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          <span>Demo APK</span>
-        </a>
+        <div class="relative group">
+          <a href="../downloads/rentlyo-admin.apk" download class="btn-primary text-xs py-2 px-3.5 shadow-sm hover:shadow-md whitespace-nowrap flex items-center gap-1.5" data-track-event="demo_apk_download" data-track-label="Warehouse Header Demo">
+            <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Demo APK</span>
+            <svg class="w-3 h-3 text-gray-300 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute right-0 top-full mt-1.5 w-60 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0 text-left">
+            <a href="../downloads/rentlyo-admin.apk" download class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-gray-800 hover:bg-brand-surface hover:text-brand-teal transition">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-gold shrink-0"></span>
+              <div>
+                <div class="font-bold text-gray-900">Owner Admin APK</div>
+                <div class="text-[10px] text-gray-500 font-normal">36.6 MB • Sheds & Yards</div>
+              </div>
+            </a>
+            <a href="../downloads/rentlyo-tenant.apk" download class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-gray-800 hover:bg-brand-surface hover:text-brand-teal transition border-t border-gray-100">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-teal shrink-0"></span>
+              <div>
+                <div class="font-bold text-gray-900">Tenant / Lessee APK</div>
+                <div class="text-[10px] text-gray-500 font-normal">34.3 MB • Occupant Companion</div>
+              </div>
+            </a>
+          </div>
+        </div>
         <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20deploying%20Rentlyo%20for%20my%20property." target="_blank" rel="noopener" class="btn-gold text-xs py-2 px-3.5 shadow-sm hover:shadow-glow whitespace-nowrap">
           <span>WhatsApp</span>
         </a>
@@ -167,10 +186,15 @@
         <a href="../contact/" class="block px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition">Contact Founder Aaryan</a>
       </div>
       <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
-        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary w-full text-center text-xs py-2.5 shadow-sm" data-track-event="demo_apk_download" data-track-label="Warehouse Mobile Menu Demo">
-          Download Demo APK
+        <a href="../downloads/rentlyo-admin.apk" download class="btn-gold w-full text-center text-xs py-2.5 shadow-sm flex items-center justify-center gap-1.5" data-track-event="demo_apk_download" data-track-label="Warehouse Mobile Admin Demo">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Owner Admin APK</span>
         </a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20Rentlyo." target="_blank" rel="noopener" class="btn-gold w-full text-center text-xs py-2.5 shadow-sm">
+        <a href="../downloads/rentlyo-tenant.apk" download class="btn-primary w-full text-center text-xs py-2.5 shadow-sm flex items-center justify-center gap-1.5" data-track-event="demo_apk_download" data-track-label="Warehouse Mobile Tenant Demo">
+          <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Tenant APK</span>
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20am%20interested%20in%20Rentlyo." target="_blank" rel="noopener" class="btn-outline-dark w-full text-center text-xs py-2.5 shadow-sm">
           Chat on WhatsApp (+91 62056 50368)
         </a>
       </div>
@@ -202,8 +226,15 @@
         Built specifically for logistics hubs, industrial sheds, and multi-godown compounds. Automate step-up rent escalations, 3-phase electricity sub-meters, and truck entry logs without recurring software fees.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary text-sm py-3 px-8" data-track-event="demo_apk_download" data-track-label="Warehouse Hero Demo">Download Tenant Demo APK</a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20manage%20commercial%20godowns%20and%20want%20to%20order%20Rentlyo." target="_blank" rel="noopener" class="btn-gold text-sm py-3 px-8" data-track-event="whatsapp_click" data-track-label="Warehouse Hero WhatsApp">Order on WhatsApp</a>
+        <a href="../downloads/rentlyo-admin.apk" download class="btn-gold text-sm py-3 px-6 flex items-center justify-center gap-2 shadow-glow" data-track-event="demo_apk_download" data-track-label="Warehouse Hero Admin Demo">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Admin Demo APK</span>
+        </a>
+        <a href="../downloads/rentlyo-tenant.apk" download class="btn-primary text-sm py-3 px-6 flex items-center justify-center gap-2" data-track-event="demo_apk_download" data-track-label="Warehouse Hero Demo">
+          <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Tenant Demo APK</span>
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20manage%20commercial%20godowns%20and%20want%20to%20order%20Rentlyo." target="_blank" rel="noopener" class="btn-outline-white text-sm py-3 px-6 flex items-center justify-center" data-track-event="whatsapp_click" data-track-label="Warehouse Hero WhatsApp">Order on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -272,8 +303,15 @@
         Flat ₹20,000 one-time setup. No monthly subscription, no per-shed charges.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="../downloads/rentlyo-tenant-demo.apk" download class="btn-primary py-3.5 px-8 text-sm" data-track-event="demo_apk_download" data-track-label="Warehouse Bottom Demo">Download Demo APK</a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20own%20godowns/warehouses%20and%20want%20to%20order%20Rentlyo." target="_blank" rel="noopener" class="btn-gold py-3.5 px-8 text-sm" data-track-event="whatsapp_click" data-track-label="Warehouse Bottom WhatsApp">Order on WhatsApp (+91 62056 50368)</a>
+        <a href="../downloads/rentlyo-admin.apk" download class="btn-gold py-3.5 px-6 text-sm flex items-center justify-center gap-2" data-track-event="demo_apk_download" data-track-label="Warehouse Bottom Admin Demo">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Admin APK</span>
+        </a>
+        <a href="../downloads/rentlyo-tenant.apk" download class="btn-primary py-3.5 px-6 text-sm flex items-center justify-center gap-2" data-track-event="demo_apk_download" data-track-label="Warehouse Bottom Tenant Demo">
+          <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download Tenant APK</span>
+        </a>
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20own%20godowns/warehouses%20and%20want%20to%20order%20Rentlyo." target="_blank" rel="noopener" class="btn-outline-dark py-3.5 px-8 text-sm" data-track-event="whatsapp_click" data-track-label="Warehouse Bottom WhatsApp">Order on WhatsApp (+91 62056 50368)</a>
       </div>
     </div>
 
