@@ -4,7 +4,8 @@
 
 User-agent: *
 Allow: /
-Disallow: /downloads/
+Allow: /downloads/Rentlyo-Brochure.pdf
+Disallow: /downloads/*.apk$
 
 # Explicit permissions for AI & LLM Search Crawlers
 User-agent: GPTBot

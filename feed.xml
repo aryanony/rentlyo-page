@@ -5,8 +5,32 @@
     <link>https://rentlyo.cscouncil.in/blog/</link>
     <description>Practical guides on rental operations, sub-meter electricity billing, lease agreements, and one-time purchase property management software in India.</description>
     <language>en-in</language>
-    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 15:45:00 +0530</lastBuildDate>
     <atom:link href="https://rentlyo.cscouncil.in/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Arya Plaza Munger Case Study: 100% Digital Rent Proof</title>
+      <link>https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/</link>
+      <guid>https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/</guid>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 +0530</pubDate>
+      <description>How 25+ commercial shops, clinics, and offices in Munger, Bihar replaced manual registers with Rentlyo, saving 8+ hours monthly with automated electricity sub-meter calculation.</description>
+    </item>
+
+    <item>
+      <title>Rentlyo vs. SaaS Subscriptions: The Honest 5-Year Economic Breakdown</title>
+      <link>https://rentlyo.cscouncil.in/compare/rentlyo-vs-subscription-software/</link>
+      <guid>https://rentlyo.cscouncil.in/compare/rentlyo-vs-subscription-software/</guid>
+      <pubDate>Fri, 25 Sep 2026 10:00:00 +0530</pubDate>
+      <description>Compare flat ₹20,000 lifetime ownership against recurring SaaS subscriptions. Landlords save over ₹69,940 across 5 years with zero per-unit fees and private cloud hosting.</description>
+    </item>
+
+    <item>
+      <title>Rentlyo vs. Excel Registers: Why Spreadsheets Fail at Indian Rent Operations</title>
+      <link>https://rentlyo.cscouncil.in/compare/rentlyo-vs-excel-register/</link>
+      <guid>https://rentlyo.cscouncil.in/compare/rentlyo-vs-excel-register/</guid>
+      <pubDate>Sun, 20 Sep 2026 14:00:00 +0530</pubDate>
+      <description>Operational analysis detailing why manual spreadsheets and paper khatas fail at electricity sub-meter calculations, step-up escalations, and instant tenant WhatsApp receipts.</description>
+    </item>
 
     <item>
       <title>Why One-Time Purchase Property Management Beats Monthly Subscriptions</title>

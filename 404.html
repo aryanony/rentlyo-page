@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTNJFZYNKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HTNJFZYNKQ');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found | Rentlyo Property Management Platform</title>
-  <meta name="description" content="The page you are looking for does not exist or has moved. Explore Rentlyo one-time purchase property management software.">
-  <link rel="canonical" href="https://rentlyo.cscouncil.in/404.html">
-
-  <link rel="icon" type="image/svg+xml" href="assets/rentlyo-icon.svg">
-  <meta name="theme-color" content="#044040">
-
-  <!-- Fonts -->
+  <!-- Resource Hints & DNS Prefetching for Speed -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <meta http-equiv="content-language" content="en-IN, hi-IN">
+  <title>Page Not Found (404) | Rentlyo Property Suite</title>
+  <meta name="description" content="The requested property page or document was not found. Return to Rentlyo homepage or download our official 10-page property management brochure.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="googlebot" content="noindex, follow">
+  <link rel="canonical" href="https://rentlyo.cscouncil.in/404.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rentlyo Property Suite">
+  <meta property="og:url" content="https://rentlyo.cscouncil.in/404.html">
+  <meta property="og:title" content="Page Not Found (404) | Rentlyo Property Suite">
+  <meta property="og:description" content="The requested property page or document was not found. Return to Rentlyo homepage or download our official 10-page property management brochure.">
+  <meta property="og:image" content="https://rentlyo.cscouncil.in/assets/rentlyo-hor.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rentlyo Property Management Platform">
+  <meta name="twitter:image:alt" content="Rentlyo Property Management Platform">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card Data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page Not Found (404) | Rentlyo Property Suite">
+  <meta name="twitter:description" content="The requested property page or document was not found. Return to Rentlyo homepage or download our official 10-page property management brochure.">
+  <meta name="twitter:image" content="https://rentlyo.cscouncil.in/assets/rentlyo-hor.webp">
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="./assets/rentlyo-icon.svg">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#044040">
+  <!-- Non-Render-Blocking Typography & Styles -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap">
+  </noscript>
+  <link rel="preload" href="./css/style.min.css" as="style">
+  <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body class="bg-brand-dark text-white antialiased min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-brand-dark">
 
@@ -22,7 +68,7 @@
   <header class="magic-header sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="./" class="flex items-center gap-3">
-        <img src="assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto" width="130" height="36">
+        <img src="assets/rentlyo-logo.svg" alt="Rentlyo Logo" class="h-8 sm:h-9 w-auto" fetchpriority="high" decoding="async" width="130" height="36">
       </a>
       <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium text-gray-300">
         <a href="features/" class="nav-link-modern hover:text-white">Features</a>
@@ -44,14 +90,18 @@
               <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Select Demo APK (v1.0.4)</span>
             </div>
             <a href="downloads/rentlyo-admin.apk" download="rentlyo-admin.apk" class="flex items-start gap-2.5 px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition group/item">
-              <div class="w-7 h-7 rounded-md bg-brand-gold/15 text-brand-gold-dark flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">👑</div>
+              <div class="w-7 h-7 rounded-md bg-brand-gold/15 text-brand-gold-dark flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
               <div>
                 <div class="text-xs font-semibold text-gray-900 group-hover/item:text-brand-teal">Owner Admin APK</div>
                 <div class="text-[10px] text-gray-500">For landlords, managers (36.6 MB)</div>
               </div>
             </a>
             <a href="downloads/rentlyo-tenant.apk" download="rentlyo-tenant.apk" class="flex items-start gap-2.5 px-3 py-2 rounded-lg hover:bg-brand-surface hover:text-brand-teal transition group/item">
-              <div class="w-7 h-7 rounded-md bg-brand-teal/10 text-brand-teal flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">📱</div>
+              <div class="w-7 h-7 rounded-md bg-brand-teal/10 text-brand-teal flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
               <div>
                 <div class="text-xs font-semibold text-gray-900 group-hover/item:text-brand-teal">Tenant / Renter APK</div>
                 <div class="text-[10px] text-gray-500">For renters, self-service (34.3 MB)</div>
@@ -91,51 +141,100 @@
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           Download Tenant APK (34.3 MB)
         </a>
-        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20hit%20a%20404%20link." target="_blank" rel="noopener" class="w-full text-center text-xs py-2 text-brand-teal font-semibold hover:underline">
+        <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20hit%20a%20404%20link." target="_blank" rel="noopener noreferrer" class="w-full text-center text-xs py-2 text-brand-teal font-semibold hover:underline">
           WhatsApp (+91 62056 50368)
         </a>
       </div>
     </div>
   </header>
 
-  <!-- 404 Hero Container -->
-  <main class="max-w-3xl mx-auto px-4 py-16 text-center space-y-8 my-auto">
+  <!-- 404 Hero Container with Vector Diagrammatic Blueprint -->
+  <main class="max-w-4xl mx-auto px-4 py-16 text-center space-y-8 my-auto">
+    <!-- Vector Blueprint Illustration of Vacant Property Unit -->
+    <div class="w-24 h-24 mx-auto rounded-3xl bg-brand-teal/10 border-2 border-brand-teal/30 flex items-center justify-center text-brand-gold shadow-glow">
+      <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+      </svg>
+    </div>
+
     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-semibold uppercase tracking-wider">
-      Error 404
+      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      Ledger Notice • Error 404
     </div>
     
     <div class="space-y-3">
-      <h1 class="text-6xl sm:text-8xl font-black text-brand-gold font-heading tracking-tight">404</h1>
-      <h2 class="text-2xl sm:text-4xl font-bold text-white font-heading">This Property Unit Is Vacant</h2>
-      <p class="text-sm sm:text-base text-gray-300 max-w-lg mx-auto">
-        The page or deal document you are looking for has been moved or does not exist on this ledger. Let's get you back on track.
+      <h1 class="text-5xl sm:text-7xl font-black text-brand-gold font-heading tracking-tight">404</h1>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white font-heading">This Property Unit Is Vacant Or Moved</h2>
+      <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
+        The link, lease document, or URL you requested does not exist on this ledger. Don't worry — all active features, demo APKs, and pricing plans are fully accessible below.
       </p>
     </div>
 
-    <!-- Quick Navigation Links -->
-    <div class="glass-dark rounded-3xl p-6 sm:p-8 border border-brand-border-dark space-y-4 max-w-xl mx-auto">
-      <div class="text-xs uppercase font-bold text-brand-gold tracking-wider">Popular Destinations</div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-medium">
-        <a href="/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Home Page</a>
-        <a href="/features/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Core Features</a>
-        <a href="/pricing/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Pricing (₹20,000)</a>
-        <a href="/case-study/arya-plaza-munger/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Arya Plaza Case Study</a>
-        <a href="/security/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Security Whitepaper</a>
-        <a href="/changelog/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white transition-colors border border-white/10">Product Changelog</a>
+    <!-- Quick Navigation Matrix (Internal Linking Hub) -->
+    <div class="glass-dark rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5 max-w-2xl mx-auto shadow-2xl">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 text-xs font-bold text-brand-gold uppercase tracking-wider">
+        <span>Popular Destinations</span>
+        <span class="text-gray-400 font-normal">Direct Site Index</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium text-left">
+        <a href="./" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Homepage</span>
+          <span class="text-[10px] text-gray-400 mt-1">Software Overview</span>
+        </a>
+        <a href="pricing/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Pricing</span>
+          <span class="text-[10px] text-gray-400 mt-1">₹20,000 One-Time</span>
+        </a>
+        <a href="demo/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Live Demo</span>
+          <span class="text-[10px] text-gray-400 mt-1">Web & Android APK</span>
+        </a>
+        <a href="features/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Features</span>
+          <span class="text-[10px] text-gray-400 mt-1">10 Core Modules</span>
+        </a>
+        <a href="case-study/arya-plaza-munger/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Case Study</span>
+          <span class="text-[10px] text-gray-400 mt-1">Arya Plaza Munger</span>
+        </a>
+        <a href="compare/rentlyo-vs-subscription-software/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">SaaS Comparison</span>
+          <span class="text-[10px] text-gray-400 mt-1">5-Year TCO Math</span>
+        </a>
+        <a href="security/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">Security</span>
+          <span class="text-[10px] text-gray-400 mt-1">Google Firebase</span>
+        </a>
+        <a href="faq/" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 hover:text-brand-gold transition border border-white/10 flex flex-col justify-between">
+          <span class="font-bold text-white">FAQ Desk</span>
+          <span class="text-[10px] text-gray-400 mt-1">Common Questions</span>
+        </a>
+      </div>
+
+      <!-- Action Buttons inside Card -->
+      <div class="pt-2 border-t border-white/10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a href="downloads/Rentlyo-Brochure.pdf" download class="btn-gold py-2.5 px-5 text-xs font-bold shadow-glow flex items-center justify-center gap-2 w-full sm:w-auto">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Download 10-Page Brochure (PDF)</span>
+        </a>
+        <a href="contact/" class="btn-outline-white py-2.5 px-5 text-xs font-semibold flex items-center justify-center gap-1.5 w-full sm:w-auto">
+          <span>Contact Aaryan Gupta →</span>
+        </a>
       </div>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
-      <a href="/" class="btn-gold py-3 px-8 text-sm">Return to Homepage</a>
-      <a href="https://wa.me/916205650368?text=Hello%20Aaryan,%20I%20hit%20a%20404%20link%20on%20Rentlyo%20website." target="_blank" rel="noopener" class="btn-outline-white py-3 px-8 text-sm">Contact Support</a>
+    <div class="pt-2">
+      <a href="./" class="text-xs text-gray-400 hover:text-brand-gold transition inline-flex items-center gap-1">
+        <span>← Return to Rentlyo Homepage</span>
+      </a>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 py-6 text-center text-xs text-gray-500">
-    <p>© 2026 Rentlyo Property Management Platform. Engineered by Aaryan Gupta.</p>
+  <footer class="border-t border-white/10 py-6 text-center text-xs text-gray-400">
+    <p>© 2026 Rentlyo Property Management Platform. Engineered by <a href="https://aryanony.pages.dev/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-gold underline underline-offset-2">Aaryan Gupta</a>.</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>

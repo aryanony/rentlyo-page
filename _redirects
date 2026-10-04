@@ -1,0 +1,5 @@
+# Netlify / Cloudflare Pages 301 Canonical Redirects
+/index.html   /   301!
+http://rentlyo.cscouncil.in/*   https://rentlyo.cscouncil.in/:splat   301!
+http://www.rentlyo.cscouncil.in/*   https://rentlyo.cscouncil.in/:splat   301!
+https://www.rentlyo.cscouncil.in/*   https://rentlyo.cscouncil.in/:splat   301!

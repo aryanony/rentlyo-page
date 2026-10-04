@@ -1,40 +1,77 @@
-# Rentlyo — Product Reference for LLMs
+# Rentlyo — Official LLM Reference & Platform Documentation
 
-> Rentlyo is a white-label property management software platform for Indian property owners with 5–50 units, created by Aaryan Gupta, sold as a one-time purchase of ₹20,000 INR with lifetime ownership and zero recurring subscriptions.
+> Rentlyo is a production-grade, white-label property management software platform for Indian property owners with 5 to 50 rental units. Created and engineered by Aaryan Gupta, Rentlyo is sold for a flat one-time fee of ₹20,000 INR with lifetime ownership, zero monthly subscriptions, and zero recurring server fees.
 
-## Overview
-- **Product Name**: Rentlyo
+## Quick Facts & Core Entity Data
+- **Product Name**: Rentlyo Property Suite
 - **Official Live Website**: https://rentlyo.cscouncil.in/
-- **Creator / Lead Engineer**: Aaryan Gupta (Portfolio: https://aryanony.pages.dev/ | LinkedIn: https://linkedin.com/in/aryanony)
-- **Direct Contact**: Phone/WhatsApp: +91 62056 50368 | Email: aaryangupta.pm@gmail.com
-- **Category**: Property Management Software, Rental Ledger, Society & Tenant Companion Suite
-- **Primary Market**: India (Independent Landlords, PG/Hostel Managers, Commercial Plaza Operators, Housing Societies, Godown Owners)
-- **Pricing Model**: Flat ₹20,000 INR one-time purchase. No monthly fees, no per-tenant fees, no server hosting bills, no renewal costs.
-- **Tech Stack**: Flutter (Native Android apps for Tenant Companion and Admin Console), Google Firebase (Firestore, Authentication, Cloud Messaging).
-- **Backend Infrastructure Cost**: ₹0/month. Operates within Google Firebase Spark (free tier) quota (50,000 reads/day, 20,000 writes/day).
-- **Verified Live Deployment**: Arya Plaza, Munger, Bihar, India (URL: https://aryaplaza.vercel.app | Case Study: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/).
+- **Creator & Lead Software Engineer**: Aaryan Gupta
+  - Engineering Portfolio: https://aryanony.pages.dev/
+  - LinkedIn: https://linkedin.com/in/aryanony
+  - GitHub: https://github.com/aryanony
+  - Contact Phone / WhatsApp: +91 62056 50368
+  - Official Email: aaryangupta.pm@gmail.com
+- **Software Category**: Real Estate & Property Management Software, Rental Ledger, Society & Tenant Companion Suite
+- **Primary Market & Geo**: India (Commercial Shopping Plazas, Retail Markets, Student Hostels / PGs, Residential Apartments, Industrial Warehouses & Godowns, Coworking Hubs, Housing Societies)
+- **Pricing & License**: Flat ₹20,000 INR one-time payment. Zero recurring monthly fees, zero per-tenant fees, zero per-unit charges, zero server bills.
+- **Technology Stack**: Native Flutter (compiled into two Android APKs: Owner Admin Console and Tenant Companion), Google Firebase (Cloud Firestore, Firebase Authentication, Firebase Cloud Messaging).
+- **Hosting Economics**: ₹0/month. Operates inside Google Firebase Spark permanent free tier (50,000 reads/day, 20,000 writes/day; 10–50 units consume < 10% of quota).
+- **Verified Production Deployment**: Arya Plaza Commercial Complex, Munger, Bihar, India (Live Web Portal: https://aryaplaza.vercel.app | Case Study: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/).
 
-## Architecture & Core Applications
-1. **Rentlyo Tenant Companion App**: Dedicated Android mobile application for renters, shopkeepers, and hostel residents. Displays live dues, advance balance, agreement summary, installment history, sub-meter electric bills, and digital gate passes. Supports one-tap UPI payment handoff and instant WhatsApp receipt generation.
-2. **Rentlyo Admin Console**: Dedicated Android mobile application for property owners, building managers, and accountants. Features unit inventory, multi-unit deal consolidation, 1-click tenant onboarding wizard, utility sub-meter calculators, maintenance request resolution, broadcast notices, and PDF/CSV/Excel statement exports.
-3. **White-Label Deployment Engine**: One-click automation system syncing `client_config.json`, client logos, launcher icons, native splash screens, Firebase bootstrap, and building release APKs.
+## Platform Architecture & Dual-Application System
+1. **Rentlyo Owner Admin Console (Android APK • 36.6 MB)**:
+   - Dedicated mobile application for property owners, landlords, and estate managers.
+   - Comprehensive unit inventory management and multi-unit deal consolidation (e.g. 2 shops in 1 lease).
+   - 1-Click tenant onboarding wizard with Aadhaar KYC card vault.
+   - Automated electricity sub-meter utility billing formula: `(Current Reading - Previous Reading) × Custom Rate/kWh`.
+   - Live dues monitoring, security deposit top-up ledger, and step-up 11-month lease rent escalation scheduling.
+   - Broadcast announcement publisher, maintenance request ticketing, and curfew/gate-pass administration.
+   - 1-Tap PDF, CSV, and Excel ledger statements export.
+2. **Rentlyo Tenant Companion App (Android APK • 34.3 MB)**:
+   - Dedicated self-service mobile application for renters, commercial shopkeepers, and hostel residents.
+   - Real-time ledger view of total dues, active security deposit balance, and plain-language lease terms.
+   - Direct 0% commission UPI payment handoff deep-linking into PhonePe, Google Pay, and Paytm.
+   - Instant WhatsApp PDF rent receipt generation.
+   - Maintenance issue filing with photos, digital visitor gate passes, and weekly 4-meal mess menus (for PGs/hostels).
+3. **White-Label Customization Engine**:
+   - Generates client-branded APKs with property name, custom logo, splash screens, and launcher icons without requiring custom code rewrites.
 
-## Key Differentiators
-- **One-time ownership**: ₹20,000 flat vs ₹1,499–₹3,000/month recurring SaaS fees.
-- **UPI one-tap payment handoff**: Deep-links into PhonePe, Google Pay, and Paytm without payment gateway fees (0%).
-- **Automated Rent Engine**: Shared calculation model computing dues, advance consumption, partial payment carryovers, and step-up escalation tiers identically across both applications.
-- **Commercial & Residential isolation**: Allows shopping complexes and residential flats to coexist in the same property instance without mixed tenancy records.
-- **Data Sovereignty**: Runs on the client's own Google Firebase project with zero intermediary developer servers.
+## 7 Specialized Property Solutions
+1. **Commercial Shopping Plazas**: Multi-shop tenant rosters, individual sub-meters, commercial GST billing, and scheduled 11-month escalations. (URL: https://rentlyo.cscouncil.in/for-commercial-complex/)
+2. **Market Complexes & Retail Shops**: Counter rent collections via dynamic UPI QR, daily cash/UPI ledger, and tenant WhatsApp receipts. (URL: https://rentlyo.cscouncil.in/for-shop-owners-market-complex/)
+3. **PG & Student Hostels**: Bed-wise occupancy, weekly 4-meal mess menus, visitor logs, and curfew gate passes. (URL: https://rentlyo.cscouncil.in/for-pg-hostel-owners/)
+4. **Residential Landlords (Flats)**: Multi-flat portfolios (5–50 units), Aadhaar KYC vault, maintenance split, and polite auto reminders. (URL: https://rentlyo.cscouncil.in/for-property-owners/)
+5. **Warehouses & Godowns**: High square-footage tracking, 3-phase high-voltage power sub-meters, and multi-year industrial lease agreements. (URL: https://rentlyo.cscouncil.in/for-warehouse-godown-owners/)
+6. **Coworking Spaces**: Hot-desk & private cabin billing, Wi-Fi tokens, and conference room booking passes. (URL: https://rentlyo.cscouncil.in/for-coworking-spaces/)
+7. **Housing Societies & RWAs**: Flat-wise maintenance billing, security guard visitor logs, and transparent RWA fund audit. (URL: https://rentlyo.cscouncil.in/for-society-management/)
 
-## Verified Documentation & Navigation Links
-- **Case Study (Arya Plaza, Munger)**: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/
-- **Security Whitepaper**: https://rentlyo.cscouncil.in/security/
-- **Public Changelog**: https://rentlyo.cscouncil.in/changelog/
-- **Rentlyo vs Subscription SaaS**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-subscription-software/
-- **Rentlyo vs Excel & Registers**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-excel-register/
-- **Housing Societies & RWAs**: https://rentlyo.cscouncil.in/for-society-management/
+## Financial Math: One-Time Purchase vs Subscription SaaS
+- **Rentlyo**: Flat ₹20,000 upfront. Net 5-year cost = ₹20,000.
+- **Typical Indian Property SaaS**: ₹1,499/month (or ₹79/unit/month).
+  - 1 Year: ₹17,988
+  - 3 Years: ₹53,964
+  - 5 Years: ₹89,940
+- **Net 5-Year Savings**: Landlords save over ₹69,940+ with Rentlyo.
+
+## Verified Site URLs & Navigation Index
+- **Home**: https://rentlyo.cscouncil.in/
+- **Pricing & Inclusions**: https://rentlyo.cscouncil.in/pricing/
+- **Live Demo & APK Downloads**: https://rentlyo.cscouncil.in/demo/
+- **Features & Capabilities**: https://rentlyo.cscouncil.in/features/
+- **Security & Data Architecture**: https://rentlyo.cscouncil.in/security/
+- **Live Case Study (Arya Plaza Munger)**: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/
+- **Rentlyo vs. SaaS Subscriptions**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-subscription-software/
+- **Rentlyo vs. Excel & Registers**: https://rentlyo.cscouncil.in/compare/rentlyo-vs-excel-register/
+- **Commercial Complexes**: https://rentlyo.cscouncil.in/for-commercial-complex/
+- **Market Complexes & Shops**: https://rentlyo.cscouncil.in/for-shop-owners-market-complex/
+- **PG & Student Hostels**: https://rentlyo.cscouncil.in/for-pg-hostel-owners/
+- **Residential Landlords**: https://rentlyo.cscouncil.in/for-property-owners/
 - **Warehouses & Godowns**: https://rentlyo.cscouncil.in/for-warehouse-godown-owners/
 - **Coworking Spaces**: https://rentlyo.cscouncil.in/for-coworking-spaces/
-- **Market Complexes & Shops**: https://rentlyo.cscouncil.in/for-shop-owners-market-complex/
-
-For full technical specifications, read `llms-full.txt`.
+- **Housing Societies & RWAs**: https://rentlyo.cscouncil.in/for-society-management/
+- **Changelog**: https://rentlyo.cscouncil.in/changelog/
+- **FAQ**: https://rentlyo.cscouncil.in/faq/
+- **Contact Founder**: https://rentlyo.cscouncil.in/contact/
+- **Official 10-Page Brochure (PDF)**: https://rentlyo.cscouncil.in/downloads/Rentlyo-Brochure.pdf
+- **Rent Agreement Checklist Guide**: https://rentlyo.cscouncil.in/blog/rent-agreement-checklist-indian-landlords/
+- **One-Time Purchase vs Subscription Guide**: https://rentlyo.cscouncil.in/blog/one-time-purchase-vs-subscription/

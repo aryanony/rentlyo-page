@@ -1,0 +1,8 @@
+# Rentlyo Security Policy
+Contact: mailto:aaryangupta.pm@gmail.com
+Contact: tel:+91-6205650368
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, hi
+Canonical: https://rentlyo.cscouncil.in/.well-known/security.txt
+Policy: https://rentlyo.cscouncil.in/security/
+Acknowledgments: https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/

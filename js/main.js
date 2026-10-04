@@ -6,9 +6,34 @@
 (function () {
   'use strict';
 
-  // Analytics Helper
+  // 0. Canonical URL & HTTPS Enforcement Guard
+  (function enforceCanonical() {
+    if (typeof window === 'undefined' || !window.location) return;
+    const loc = window.location;
+    // Skip on local development
+    if (loc.hostname === 'localhost' || loc.hostname === '127.0.0.1' || loc.protocol === 'file:') return;
+
+    // Force HTTPS on live domains
+    if (loc.protocol === 'http:') {
+      loc.replace('https://' + loc.host + loc.pathname + loc.search + loc.hash);
+      return;
+    }
+
+    // Strip trailing /index.html in browser address bar without reload
+    if (loc.pathname.endsWith('/index.html')) {
+      const cleanPath = loc.pathname.replace(/\/index\.html$/, '/') + loc.search + loc.hash;
+      window.history.replaceState(null, '', cleanPath);
+    }
+  })();
+
+  // Analytics & Tag Manager Dual-Dispatch Helper
   window.dataLayer = window.dataLayer || [];
   function gtagEvent(eventName, params = {}) {
+    // 1. Dispatch directly to Google Analytics (gtag.js)
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    }
+    // 2. Dispatch to Google Tag Manager dataLayer
     window.dataLayer.push({
       event: eventName,
       ...params,
@@ -162,7 +187,7 @@
           currentIndex = index;
         }
 
-        const offsetPercent = currentIndex * 100;
+        const offsetPercent = slides.length > 0 ? (currentIndex * 100) / slides.length : 0;
         carouselTrack.style.transform = `translateX(-${offsetPercent}%)`;
         updateDots();
 
@@ -471,9 +496,17 @@
         form.classList.add('hidden');
         if (successBox) successBox.classList.remove('hidden');
 
+        // Automatically trigger brochure download
+        const dlLink = document.createElement('a');
+        dlLink.href = 'downloads/Rentlyo-Brochure.pdf';
+        dlLink.download = 'Rentlyo-Brochure.pdf';
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+
         setTimeout(() => {
           dismissModal();
-        }, 3200);
+        }, 4000);
       });
     }
   }
