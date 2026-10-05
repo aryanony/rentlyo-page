@@ -519,9 +519,6 @@
     }
 
     const candidateSelectors = [
-      '#hero h1',
-      '#hero p',
-      '#hero .flex-col.sm\\:flex-row',
       '#live-proof .glass-card',
       '#problems .p-6',
       '#features .glass-card',
@@ -529,17 +526,18 @@
       '#calculator .glass-card',
       '#pricing .glass-card',
       '#founder .glass-card',
-      '#faq .glass-card',
-      '.hover-lift'
+      '#faq .glass-card'
     ];
 
-    candidateSelectors.forEach(sel => {
-      document.querySelectorAll(sel).forEach((el, index) => {
-        if (!el.classList.contains('reveal-init') && !el.classList.contains('reveal-scale-init')) {
-          el.classList.add('reveal-init');
-          const delayClass = `delay-${((index % 4) + 1) * 100}`;
-          el.classList.add(delayClass);
-        }
+    requestAnimationFrame(() => {
+      candidateSelectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach((el, index) => {
+          if (!el.classList.contains('reveal-init') && !el.classList.contains('reveal-scale-init')) {
+            el.classList.add('reveal-init');
+            const delayClass = `delay-${((index % 4) + 1) * 100}`;
+            el.classList.add(delayClass);
+          }
+        });
       });
     });
 
@@ -688,90 +686,5 @@
     counterElements.forEach(el => counterObserver.observe(el));
   }
 
-  function initRentlyoLoader() {
-    const loader = document.getElementById('rentlyo-loader');
-    if (!loader) return;
-
-    const fill = document.getElementById('rentlyo-loader-fill');
-    const percent = document.getElementById('rentlyo-loader-percent');
-    const statusText = document.getElementById('rentlyo-loader-status');
-
-    let currentProgress = 0;
-    let isDismissed = false;
-
-    function setProgress(val, message) {
-      if (isDismissed) return;
-      currentProgress = Math.max(currentProgress, Math.min(100, val));
-      if (fill) fill.style.width = currentProgress + '%';
-      if (percent) percent.textContent = Math.round(currentProgress) + '%';
-      if (statusText && message) {
-        statusText.textContent = message;
-      }
-    }
-
-    function dismissLoader() {
-      if (isDismissed) return;
-      isDismissed = true;
-      setProgress(100, 'Property OS Ready');
-
-      setTimeout(() => {
-        loader.classList.add('loaded');
-        loader.setAttribute('aria-hidden', 'true');
-        try {
-          sessionStorage.setItem('rentlyo_visited', 'true');
-        } catch (e) {}
-
-        setTimeout(() => {
-          loader.style.display = 'none';
-        }, 400);
-      }, 140);
-    }
-
-    // Allow instant tap/click to dismiss for power users
-    loader.addEventListener('click', dismissLoader);
-
-    // Check repeat visit in current browser session
-    const isRepeat = (function() {
-      try {
-        return sessionStorage.getItem('rentlyo_visited') === 'true';
-      } catch (e) {
-        return false;
-      }
-    })();
-
-    if (isRepeat) {
-      // Snappy micro-transition on repeat navigation (~150ms)
-      setProgress(45, 'Resuming Property OS...');
-      setTimeout(() => setProgress(88, 'Synchronizing Ledger...'), 40);
-      setTimeout(dismissLoader, 130);
-    } else {
-      // First visit: authoritative, smooth high-tech progression
-      setProgress(25, 'Initializing Property OS...');
-
-      setTimeout(() => {
-        setProgress(58, 'Verifying Local Ledger & Sync...');
-      }, 80);
-
-      setTimeout(() => {
-        setProgress(88, 'Securing Offline Architecture...');
-      }, 180);
-
-      if (document.readyState === 'complete') {
-        setTimeout(dismissLoader, 280);
-      } else {
-        window.addEventListener('load', () => {
-          setTimeout(dismissLoader, 160);
-        });
-      }
-
-      // Hard safety timeout fallback (max 700ms)
-      setTimeout(dismissLoader, 700);
-    }
-  }
-
-  // Pre-initialize loader immediately if DOM is already interactive
-  if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    initRentlyoLoader();
-  }
 })();
 

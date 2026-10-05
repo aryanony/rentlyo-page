@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Rentlyo Property Suite",
+    "documentationUrl": "https://rentlyo.cscouncil.in/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:rentlyo:tools:roi-calculator",
+      "displayName": "Rentlyo Rent & SaaS Savings Calculator",
+      "type": "application/mcp-server-card+json",
+      "url": "https://rentlyo.cscouncil.in/#calculator",
+      "description": "Calculates property owner 5-year savings when switching from subscription SaaS to Rentlyo flat ₹20,000 one-time fee.",
+      "representativeQueries": [
+        "rentlyo roi calculator",
+        "property management savings calculator"
+      ]
+    },
+    {
+      "identifier": "urn:air:rentlyo:agents:founder-contact",
+      "displayName": "Rentlyo Property Management Inquiry Agent",
+      "type": "application/agent-card+json",
+      "url": "https://rentlyo.cscouncil.in/contact/",
+      "description": "Direct inquiry channel and walkthrough scheduler for Rentlyo rental suite.",
+      "representativeQueries": [
+        "contact rentlyo founder",
+        "buy rentlyo property suite"
+      ]
+    }
+  ]
+}

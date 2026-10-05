@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTNJFZYNKQ"></script>
+  <!-- Lightweight Deferrable Analytics -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HTNJFZYNKQ');
+    
+    // Defer heavy third-party analytics until after initial render
+    function loadAnalytics() {
+      const gtmScript = document.createElement('script');
+      gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-HTNJFZYNKQ';
+      gtmScript.async = true;
+      document.head.appendChild(gtmScript);
+    }
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => setTimeout(loadAnalytics, 1500));
+    } else {
+      window.addEventListener('load', () => setTimeout(loadAnalytics, 1500));
+    }
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Agentic Resource Discovery & LLM Navigation -->
+  <link rel="help" type="text/markdown" href="/llms.txt" title="LLM Context & System Architecture">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Machine-Readable Index">
+  <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json">
+  
   <!-- Resource Hints & DNS Prefetching for Speed -->
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
   <meta http-equiv="content-language" content="en-IN, hi-IN">
   <title>Contact Rentlyo | Direct Founder Call & WhatsApp Desk</title>
   <meta name="description" content="Connect directly with creator Aaryan Gupta. Call or WhatsApp +91 62056 50368 for live product walkthroughs, custom branding, and deployment support.">
@@ -374,22 +388,25 @@
           <p class="text-xs text-gray-600 mt-1">Fill out your details to initiate an instant WhatsApp setup discussion with Aaryan.</p>
         </div>
 
-        <form id="inquiry-form" class="space-y-4 text-sm" onsubmit="event.preventDefault(); submitInquiry();">
+        <form id="inquiry-form" class="space-y-4 text-sm" onsubmit="event.preventDefault(); submitInquiry();"
+              toolname="sendPropertyInquiry"
+              tooldescription="Submit inquiry for Rentlyo property management system deployment and schedule walkthrough with founder Aaryan Gupta"
+              toolautosubmit>
           <div>
-            <label class="block text-xs font-semibold text-gray-700 mb-1">Your Name</label>
-            <input type="text" id="inq-name" required placeholder="e.g. Rajesh Sharma" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal">
+            <label for="inq-name" class="block text-xs font-semibold text-gray-700 mb-1">Your Name</label>
+            <input type="text" id="inq-name" name="name" required placeholder="e.g. Rajesh Sharma" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal" toolparamdescription="Full name of landlord or property manager">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-700 mb-1">Property Name / Location</label>
-            <input type="text" id="inq-prop" placeholder="e.g. Royal Complex, Jaipur" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal">
+            <label for="inq-prop" class="block text-xs font-semibold text-gray-700 mb-1">Property Name / Location</label>
+            <input type="text" id="inq-prop" name="property_location" placeholder="e.g. Royal Complex, Jaipur" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal" toolparamdescription="Commercial or residential building name and city">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-700 mb-1">Number of Units / Shops</label>
-            <input type="number" id="inq-units" value="15" min="1" max="500" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal">
+            <label for="inq-units" class="block text-xs font-semibold text-gray-700 mb-1">Number of Units / Shops</label>
+            <input type="number" id="inq-units" name="unit_count" value="15" min="1" max="500" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal" toolparamdescription="Total number of rental units or retail shops">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-700 mb-1">Property Type</label>
-            <select id="inq-type" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal">
+            <label for="inq-type" class="block text-xs font-semibold text-gray-700 mb-1">Property Type</label>
+            <select id="inq-type" name="property_type" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-teal" toolparamdescription="Category of real estate (residential, shopping complex, PG/hostel, or mixed)">
               <option value="Residential Flats">Residential Flats</option>
               <option value="Commercial Shopping Complex">Commercial Shopping Complex</option>
               <option value="PG / Hostel">PG / Hostel</option>

@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTNJFZYNKQ"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Analytics Stubs & Zero-Blocking Lazy Loader -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    window.gtag = gtag;
 
-    gtag('config', 'G-HTNJFZYNKQ');
-  </script>
-
-  <!-- Meta Pixel Code (Facebook Pixel) -->
-  <script>
+    // Meta Pixel stub queue
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1184920486650368');
-    fbq('track', 'PageView');
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    // Defer network-heavy tracking until browser has completed critical render
+    function initAnalytics() {
+      if (window._analyticsLoaded) return;
+      window._analyticsLoaded = true;
+
+      var gtm = document.createElement('script');
+      gtm.async = true;
+      gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-HTNJFZYNKQ';
+      document.head.appendChild(gtm);
+
+      var fb = document.createElement('script');
+      fb.async = true;
+      fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(fb);
+
+      gtag('js', new Date());
+      gtag('config', 'G-HTNJFZYNKQ');
+      fbq('init', '1184920486650368');
+      fbq('track', 'PageView');
+    }
+
+    // Load tracking on first user interaction or when idle
+    ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+      window.addEventListener(evt, initAnalytics, { once: true, passive: true });
+    });
+    if (!navigator.webdriver) {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(initAnalytics, 4000); }, { timeout: 6000 });
+      } else {
+        window.addEventListener('load', function() { setTimeout(initAnalytics, 4000); });
+      }
+    }
   </script>
   <noscript>
     <img height="1" width="1" class="hidden" src="https://www.facebook.com/tr?id=1184920486650368&ev=PageView&noscript=1" alt="Meta Pixel" />
   </noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- End Meta Pixel & Analytics -->
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Resource Hints & DNS Prefetching for Speed -->
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- Resource Hints & DNS Prefetching for Critical Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <meta http-equiv="content-language" content="en-IN, hi-IN">
-  <title>Rentlyo: Property &amp; Rent Management Software</title>
-  <meta name="description" content="Rentlyo is property rent and tenant management software for Indian owners. Flat ₹20,000 one-time fee. Branded Admin &amp; Tenant apps. No subscriptions.">
+  <title>Rent Management Software &amp; App for Property Owners | Rentlyo</title>
+  <meta name="description" content="Manage residential &amp; commercial rentals, tenants and rent records with Rentlyo. Simple mobile rent &amp; property management software for landlords and property owners in India.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="keywords" content="property management software India, rent management app, one time payment property software, tenant management app, PG hostel management software one time payment, Aaryan Gupta, white label property management app India">
+  <meta name="keywords" content="property management software, rent management software, rental property management software, property management software India, rent management software India, rental management software India, property management app India, rent management app India, rental property management app India, property rent management software, property management software for landlords, commercial property management software, residential property management software, rent collection app for landlords, tenant management software, property management software for small landlords, lease management software">
   <meta name="author" content="Aaryan Gupta">
   <link rel="canonical" href="https://rentlyo.cscouncil.in/">
 
@@ -90,12 +114,15 @@
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#044040">
   <!-- Non-Render-Blocking Typography & Styles -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap">
   </noscript>
-  <link rel="preload" href="./css/style.min.css?v=2.2" as="style">
-  <link rel="stylesheet" href="./css/style.min.css?v=2.2">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <!-- Agentic Resource Discovery & LLM Navigation -->
+  <link rel="help" href="/llms.txt" type="text/plain" title="LLM Reference">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context">
+  <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/json" title="AI Tool Catalog">
 
   <!-- Structured Data JSON-LD (@graph) - Advanced SEO / AEO / GEO -->
   <script type="application/ld+json">
@@ -320,37 +347,6 @@
 </head>
 <body class="bg-brand-surface text-gray-800 antialiased selection:bg-brand-gold selection:text-brand-dark">
   <!-- Google Tag Manager (noscript) -->
-
-  <!-- Rentlyo High-Performance Brand Loader -->
-  <div id="rentlyo-loader" class="rentlyo-loader-wrapper" role="status" aria-live="polite" aria-label="Loading Rentlyo Property Management OS">
-    <div class="rentlyo-loader-card">
-      <div class="rentlyo-emblem-container">
-        <div class="rentlyo-orbital-ring"></div>
-        <div class="rentlyo-pulse-glow"></div>
-        <svg class="rentlyo-emblem-svg" viewBox="0 0 274 274" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path fill="#034444" d="M 111.02 22.04 C 119.44 16.54 130.95 16.35 139.55 21.54 C 163.13 35.54 186.43 50.00 209.93 64.14 C 219.12 69.48 225.59 79.36 226.37 90.00 C 226.41 100.34 226.50 110.68 226.35 121.02 C 224.84 130.07 219.86 139.03 211.78 143.75 C 201.13 150.44 190.56 157.24 180.03 164.10 C 175.17 166.83 174.39 175.72 179.76 178.25 C 196.97 188.68 214.15 199.18 231.31 209.68 C 235.94 212.80 238.80 218.39 238.63 223.97 C 238.65 235.00 238.73 246.03 238.65 257.06 C 232.91 255.10 228.34 250.78 223.03 247.94 C 201.58 234.38 180.12 220.82 158.59 207.39 C 151.34 203.30 146.70 195.27 146.49 186.99 C 146.34 176.33 146.51 165.66 146.51 155.00 C 147.24 147.90 151.51 141.31 157.54 137.50 C 166.11 132.09 174.71 126.74 183.19 121.18 C 186.53 118.96 190.59 117.29 192.65 113.63 C 196.73 107.66 195.12 97.90 188.44 94.52 C 170.29 83.34 152.11 72.23 133.97 61.06 C 129.82 57.85 124.01 56.15 119.33 59.33 C 99.52 71.41 80.13 84.17 60.36 96.31 C 56.14 99.33 49.77 96.08 49.35 91.03 C 49.16 86.36 49.33 81.68 49.25 77.01 C 48.73 68.26 53.43 59.48 60.82 54.83 C 77.61 43.98 94.27 32.94 111.02 22.04 Z" />
-          <path fill="#045959" d="M 52.53 128.51 C 76.12 114.51 98.91 99.23 122.14 84.63 C 122.50 84.79 123.21 85.11 123.57 85.27 C 123.92 92.17 123.51 99.10 123.72 106.02 C 124.38 110.72 120.81 114.64 117.58 117.57 C 107.18 124.84 96.15 131.14 85.59 138.16 C 84.64 138.78 83.77 139.75 83.84 140.97 C 83.44 173.74 84.27 206.54 83.52 239.29 C 72.84 233.25 62.80 226.10 52.28 219.76 C 50.98 218.94 49.21 217.86 49.50 216.05 C 49.48 188.35 49.54 160.65 49.54 132.95 C 49.47 131.04 51.16 129.61 52.53 128.51 Z" />
-          <path fill="#CF9D30" d="M 88.02 139.64 C 100.21 133.07 111.41 124.81 123.52 118.10 C 123.53 151.25 123.98 184.44 123.49 217.57 C 112.65 224.82 101.00 230.92 90.03 238.04 C 88.19 239.57 85.75 239.49 83.50 239.65 L 83.52 239.29 C 84.27 206.54 83.44 173.74 83.84 140.97 C 83.77 139.75 84.64 138.78 85.59 138.16 C 86.20 138.53 87.42 139.27 88.02 139.64 M 92.80 180.70 C 92.07 182.60 92.53 184.76 92.48 186.77 C 96.73 187.92 96.98 179.02 92.80 180.70 Z" />
-          <path fill="#CF9D30" d="M 92.80 180.70 C 96.98 179.02 96.73 187.92 92.48 186.77 C 92.53 184.76 92.07 182.60 92.80 180.70 Z" />
-        </svg>
-      </div>
-      <div class="rentlyo-loader-title">RENTLYO<span>.</span></div>
-      <div class="rentlyo-loader-badge">
-        <span class="rentlyo-live-dot"></span>
-        Property Management OS
-      </div>
-      <div class="rentlyo-progress-container">
-        <div class="rentlyo-progress-header">
-          <span id="rentlyo-loader-status" class="rentlyo-status-text">Initializing Property OS...</span>
-          <span id="rentlyo-loader-percent" class="font-mono font-semibold text-brand-gold">0%</span>
-        </div>
-        <div class="rentlyo-progress-track">
-          <div id="rentlyo-loader-fill" class="rentlyo-progress-fill"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Top Announcement / Guarantee Bar -->
   <div class="bg-brand-dark text-white text-xs py-1.5 px-4 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
@@ -391,12 +387,12 @@
 
         <!-- Solutions Dropdown -->
         <div class="relative group">
-          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1 focus:outline-none py-1.5" aria-expanded="false">
+          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1 focus:outline-none py-1.5" aria-expanded="false" aria-haspopup="true" aria-controls="solutions-dropdown">
             <span data-i18n="header_nav_solutions">Solutions</span>
             <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-teal transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           
-          <div class="absolute top-full left-0 mt-1.5 w-72 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
+          <div id="solutions-dropdown" class="absolute top-full left-0 mt-1.5 w-72 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
             <div class="px-3.5 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-wider">Property Verticals</div>
             <a href="for-commercial-complex/" class="flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-gray-700 hover:bg-brand-surface hover:text-brand-teal transition">
               <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
@@ -435,12 +431,12 @@
 
         <!-- Explore Dropdown -->
         <div class="relative group">
-          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1 focus:outline-none py-1.5" aria-expanded="false">
+          <button type="button" class="nav-link-modern hover:text-brand-teal transition-colors inline-flex items-center gap-1 focus:outline-none py-1.5" aria-expanded="false" aria-haspopup="true" aria-controls="explore-dropdown">
             <span data-i18n="header_nav_explore">Explore</span>
             <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-teal transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           
-          <div class="absolute top-full left-0 mt-1.5 w-64 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
+          <div id="explore-dropdown" class="absolute top-full left-0 mt-1.5 w-64 bg-white rounded-2xl shadow-xl border border-brand-border-light py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-1 group-hover:translate-y-0">
             <a href="downloads/Rentlyo-Brochure.pdf" download class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-amber-800 bg-amber-50 hover:bg-amber-100 transition border-b border-amber-100">
               <svg class="w-4 h-4 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"/></svg>
               <span>Download Brochure (PDF)</span>
@@ -582,6 +578,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- SECTION 1: HERO (Aligned with Page 1 of Rentlyo-Brochure.pdf) -->
   <section id="hero" class="relative overflow-hidden pt-8 pb-12 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-20 bg-gradient-to-b from-brand-surface via-white to-brand-surface">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -595,14 +592,14 @@
           </div>
 
           <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-extrabold text-brand-dark tracking-tight leading-[1.18]">
-            <span data-i18n="hero_headline">Software rent pe mat lo. Khareed lo — hamesha ke liye.</span>
+            <span data-i18n="hero_headline">Rent &amp; Property Management Software for Landlords &amp; Property Owners</span>
             <span class="block text-base sm:text-xl lg:text-2xl xl:text-3xl font-bold text-brand-teal mt-1.5 sm:mt-2.5">
-              One-Time Purchase Property Management Software India
+              Residential &amp; Commercial Rentals in India • One-Time Flat ₹20,000
             </span>
           </h1>
 
           <p class="text-sm sm:text-base lg:text-lg text-gray-700 max-w-2xl leading-relaxed" data-i18n="hero_subline">
-            Do apps. Ek hi live hisaab-kitab. Aapka kiraya, deposit, bill — sab kuch khud-ba-khud sambhlega.
+            Manage residential flats, commercial shops, tenants, and monthly rent records from an easy-to-use mobile app. Two apps, one live ledger, zero monthly subscriptions.
           </p>
 
           <!-- 3 Highlight Badges Directly from Page 1 of Brochure -->
@@ -783,7 +780,7 @@
   </section> <!-- End Section 1: Hero -->
 
   <!-- SECTION 2: ROZ KI PROBLEM (Aligned with Page 2 of Rentlyo-Brochure.pdf) -->
-  <section id="problems" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-y border-brand-border-light">
+  <section id="problems" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-y border-brand-border-light">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 lg:space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider">
@@ -860,7 +857,7 @@
   </section>
 
   <!-- SECTION 3: SOLUTION (Aligned with Page 3 of Rentlyo-Brochure.pdf) -->
-  <section id="solution" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-b border-brand-border-light">
+  <section id="solution" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-b border-brand-border-light">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 lg:space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <div class="badge-gold" data-i18n="how_eyebrow">S O L U T I O N</div>
@@ -1004,7 +1001,7 @@
   </section>
 
   <!-- SECTION 4: SAB KUCH SHAMIL HAI (Aligned with Page 4 of Rentlyo-Brochure.pdf) -->
-  <section id="features" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-b border-brand-border-light">
+  <section id="features" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-b border-brand-border-light">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 lg:space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <div class="badge-teal" data-i18n="features_eyebrow">SAB KUCH SHAMIL HAI</div>
@@ -1364,7 +1361,7 @@
   
 
   <!-- SECTION 5: KHUD DEKHO, VISHWAS KARO — COMPLETE INTERACTIVE EXPERIENCE CENTER -->
-  <section id="live-demo" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-b border-brand-border-light">
+  <section id="live-demo" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-white border-b border-brand-border-light">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-12">
       
       <!-- Section Header -->
@@ -1726,7 +1723,7 @@
   </section>
 
   <!-- SECTION 6: INTERACTIVE COST CALCULATOR (ADVANCED SIGNATURE ELEMENT) -->
-  <section id="calculator" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-dark text-white relative overflow-hidden">
+  <section id="calculator" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-dark text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
         <div class="badge-gold mb-3" data-i18n="calc_eyebrow">The Unbeatable Math</div>
@@ -1769,7 +1766,7 @@
                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400 font-bold">₹</span>
                 <input type="number" id="calc-rate" value="1499" min="100" step="50" class="w-full pl-8 pr-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white font-bold focus:border-brand-gold focus:outline-none">
               </div>
-              <select id="calc-pricing-type" class="px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white font-medium focus:border-brand-gold focus:outline-none">
+              <select id="calc-pricing-type" aria-label="SaaS pricing calculation model" class="px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white font-medium focus:border-brand-gold focus:outline-none">
                 <option value="flat" class="bg-brand-dark" data-i18n="calc_rate_type_flat">Flat per month (₹)</option>
                 <option value="per-unit" class="bg-brand-dark" data-i18n="calc_rate_type_per_unit">Per unit / month (₹)</option>
               </select>
@@ -1945,7 +1942,7 @@
   </section>
 
   <!-- SECTION 9: LIVE PROOF (PAGE 7: DEMO NAHI — ASLI HAI) -->
-  <section id="live-proof" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-white">
+  <section id="live-proof" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-br from-brand-teal via-[#033434] to-brand-dark rounded-3xl p-4 sm:p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden hover-lift">
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-gold/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -2087,7 +2084,7 @@
 
 
   <!-- SECTION 9.5: INDUSTRY VERTICALS & PROPERTY SOLUTIONS HUB (ADVANCED INTERNAL LINKING) -->
-  <section id="verticals" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-t border-brand-border-light relative overflow-hidden">
+  <section id="verticals" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-t border-brand-border-light relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 lg:space-y-16">
       
       <!-- Section Header -->
@@ -2410,7 +2407,7 @@
   </section>
 
   <!-- SECTION 10: FOUNDER TRUST & ACCOUNTABILITY (MEET AARYAN GUPTA) -->
-  <section id="founder" class="py-10 sm:py-12 lg:py-16 bg-brand-surface border-y border-brand-border-light">
+  <section id="founder" class="section-lazy py-10 sm:py-12 lg:py-16 bg-brand-surface border-y border-brand-border-light">
     <div class="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8">
       <div class="bg-white rounded-3xl border border-brand-border-light shadow-card p-4 sm:p-8 lg:p-12 hover-lift glass-sheen">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -2488,7 +2485,7 @@
   </section>
 
   <!-- SECTION 11: PRICING (PAGES 8 & 9: APNA PLAN CHUNO & KONFUSION NAHI) -->
-  <section id="pricing" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-white">
+  <section id="pricing" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
       
       <!-- Section Header (Page 8) -->
@@ -2839,7 +2836,7 @@
 
 
   <!-- SECTION 11: DIRECT ANSWERS, SYSTEM SPECIFICATIONS & FAQ (PAGE 10 & AEO HUB) -->
-  <section id="faq" class="py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-t border-brand-border-light" itemscope itemtype="https://schema.org/FAQPage">
+  <section id="faq" class="section-lazy py-10 sm:py-14 lg:py-16 xl:py-20 bg-brand-surface border-t border-brand-border-light" itemscope itemtype="https://schema.org/FAQPage">
     <div class="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
       
       <!-- Section Header -->
@@ -3055,7 +3052,7 @@
   </section>
 
   <!-- SECTION 13: FINAL CTA & CONTACT (PAGE 10: SHURU KARO AAJ HI) -->
-  <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-brand-dark via-[#042026] to-[#021317] text-white text-center relative overflow-hidden">
+  <section class="section-lazy py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-brand-dark via-[#042026] to-[#021317] text-white text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10 space-y-8">
@@ -3121,6 +3118,7 @@
 
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="bg-[#03151c] text-gray-400 text-sm py-12 border-t border-white/10">
@@ -3241,11 +3239,11 @@
         </p>
       </div>
 
-      <!-- Lead Capture Form -->
-      <form id="exit-intent-form" class="space-y-3 pt-1">
+      <!-- Lead Capture Form (WebMCP Declarative Tool) -->
+      <form id="exit-intent-form" class="space-y-3 pt-1" toolname="requestBrochureDemo" tooldescription="Request the official Rentlyo PDF brochure, feature list, and Android APK demo link by submitting your email." toolautosubmit>
         <div>
           <label for="exit-intent-email" class="sr-only">Email Address</label>
-          <input type="email" id="exit-intent-email" required placeholder="Enter your email address (e.g. name@property.in)" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold">
+          <input type="email" id="exit-intent-email" required placeholder="Enter your email address (e.g. name@property.in)" toolparamdescription="Property owner email address to receive brochure and demo link" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold">
         </div>
         <button type="submit" class="btn-gold w-full py-3.5 text-sm font-bold shadow-glow flex items-center justify-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -3291,8 +3289,8 @@
   </div>
 
   <!-- Scripts -->
-  <script defer src="js/main.js"></script>
-  <script defer src="js/calculator.js"></script>
-  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.min.js"></script>
+  <script defer src="js/calculator.min.js"></script>
+  <script defer src="js/i18n.min.js"></script>
 </body>
 </html>

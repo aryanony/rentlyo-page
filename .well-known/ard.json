@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/schemas/v0.91/ard-catalog.schema.json",
+  "version": "0.91",
+  "name": "Rentlyo Property Suite",
+  "description": "Property management platform tools, calculators, and documentation for autonomous AI agents.",
+  "url": "https://rentlyo.cscouncil.in/",
+  "entries": [
+    {
+      "id": "rentlyo-roi-calculator",
+      "name": "Rentlyo Rent & SaaS Savings Calculator",
+      "type": "application/json",
+      "url": "https://rentlyo.cscouncil.in/#calculator",
+      "description": "Calculates property owner 5-year savings when switching from subscription SaaS to Rentlyo flat ₹20,000 one-time fee."
+    },
+    {
+      "id": "rentlyo-llms-txt",
+      "name": "Rentlyo LLM Documentation",
+      "type": "text/plain",
+      "url": "https://rentlyo.cscouncil.in/llms.txt",
+      "description": "Standardized markdown documentation for AI agents and LLMs."
+    },
+    {
+      "id": "rentlyo-brochure-download",
+      "name": "Rentlyo Official Brochure",
+      "type": "application/pdf",
+      "url": "https://rentlyo.cscouncil.in/downloads/Rentlyo-Brochure.pdf",
+      "description": "Official 10-page product architecture and feature guide."
+    }
+  ]
+}

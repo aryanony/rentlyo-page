@@ -37,8 +37,8 @@
 
       // Hero (Page 1 of Brochure)
       "hero_badge": "One-Time Payment • Lifetime Ownership • Zero Subscriptions",
-      "hero_headline": "Don't rent your software. Buy it — forever.",
-      "hero_subline": "Two apps. One live ledger. Your rent, security deposits, and utility bills run on autopilot.",
+      "hero_headline": "Rent & Property Management Software for Landlords & Property Owners",
+      "hero_subline": "Manage residential flats, commercial shops, tenants, and monthly rent records from an easy-to-use mobile app. Two apps, one live ledger, zero monthly subscriptions.",
       "hero_feat_onetime": "One-Time Payment",
       "hero_feat_website": "Free Property Website Included",
       "hero_feat_google": "Free Google Business Listing",
@@ -262,8 +262,8 @@
 
       // Hero (Page 1 of Brochure)
       "hero_badge": "एकमुश्त भुगतान • लाइफटाइम मालिकाना हक • शून्य सब्सक्रिप्शन",
-      "hero_headline": "Software rent pe mat lo. Khareed lo — hamesha ke liye.",
-      "hero_subline": "Do apps. Ek hi live hisaab-kitab. Aapka kiraya, deposit, bill — sab kuch khud-ba-khud sambhlega.",
+      "hero_headline": "मकान मालिकों और प्रॉपर्टी ओनर्स के लिए रेंट और प्रॉपर्टी मैनेजमेंट सॉफ्टवेयर",
+      "hero_subline": "रेजिडेंशियल फ्लैट्स, कमर्शियल दुकानें, किराएदार और महीने का किराया — सब कुछ अपने मोबाइल ऐप से संभालें। केवल एक बार का ₹20,000, शून्य मासिक सब्सक्रिप्शन।",
       "hero_feat_onetime": "Ek baar ka payment",
       "hero_feat_website": "Free website shamil",
       "hero_feat_google": "Free Google listing",
@@ -501,7 +501,20 @@
   window.setLanguage = applyLanguage;
 
   document.addEventListener('DOMContentLoaded', () => {
-    applyLanguage(currentLang);
+    // Only perform full DOM mutation if language is non-English, since base HTML is already English
+    if (currentLang !== 'en') {
+      applyLanguage(currentLang);
+    } else {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === 'en') {
+          btn.classList.add('bg-brand-teal', 'text-white');
+          btn.classList.remove('text-gray-300', 'hover:text-white');
+        } else {
+          btn.classList.remove('bg-brand-teal', 'text-white');
+          btn.classList.add('text-gray-300', 'hover:text-white');
+        }
+      });
+    }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {

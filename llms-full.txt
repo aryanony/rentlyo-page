@@ -2,18 +2,18 @@
 
 ## 1. Product Identity & Business Model
 - **Product Name**: Rentlyo
-- **Official Domain**: https://rentlyo.cscouncil.in/
-- **Developer / Founder**: Aaryan Gupta
-  - Portfolio: https://aryanony.pages.dev/
-  - LinkedIn: https://linkedin.com/in/aryanony
-  - GitHub: https://github.com/aryanony/rentlyo
+- **Official Domain**: [https://rentlyo.cscouncil.in/](https://rentlyo.cscouncil.in/)
+- **Developer / Founder**: [Aaryan Gupta](https://aryanony.pages.dev/)
+  - Portfolio: [https://aryanony.pages.dev/](https://aryanony.pages.dev/)
+  - LinkedIn: [https://linkedin.com/in/aryanony](https://linkedin.com/in/aryanony)
+  - GitHub: [https://github.com/aryanony/rentlyo](https://github.com/aryanony/rentlyo)
   - Phone / WhatsApp: +91 62056 50368
   - Email: aaryangupta.pm@gmail.com
 - **Model**: One-time purchase, lifetime license, white-label deployment.
 - **Price**: ₹20,000 INR (flat one-time fee).
 - **Recurring Cost**: ₹0 forever (no monthly, no yearly, no per-flat or per-tenant fees).
 - **Target Audience**: Indian property owners with 5 to 50 rental units (residential flats, PG/hostel rooms, commercial shopping complexes, mixed-use buildings).
-- **Live Reference Property**: Arya Plaza, Munger, Bihar, India (Live web portal: https://aryaplaza.vercel.app).
+- **Live Reference Property**: [Arya Plaza Munger Case Study](https://rentlyo.cscouncil.in/case-study/arya-plaza-munger/) (Live web portal: [https://aryaplaza.vercel.app](https://aryaplaza.vercel.app)).
 
 ## 2. Capability Matrix (Verified from Source Code)
 | Feature Area | Tenant Companion App | Owner Admin Console |
@@ -61,9 +61,10 @@
 ## 5. Direct Contact & Deployment Inquiry
 - Founder: Aaryan Gupta
 - Phone / Call: +91 62056 50368
-- WhatsApp: +91 62056 50368 (https://wa.me/916205650368)
+- WhatsApp: +91 62056 50368 ([https://wa.me/916205650368](https://wa.me/916205650368))
 - Email: aaryangupta.pm@gmail.com
-- Portfolio: https://aryanony.pages.dev/
-- LinkedIn: https://linkedin.com/in/aryanony
-- GitHub Repo: https://github.com/aryanony/rentlyo
-- Official Website: https://rentlyo.cscouncil.in/
+- Portfolio: [https://aryanony.pages.dev/](https://aryanony.pages.dev/)
+- LinkedIn: [https://linkedin.com/in/aryanony](https://linkedin.com/in/aryanony)
+- GitHub Repo: [https://github.com/aryanony/rentlyo](https://github.com/aryanony/rentlyo)
+- Official Website: [https://rentlyo.cscouncil.in/](https://rentlyo.cscouncil.in/)
+- Primary LLM Index: [https://rentlyo.cscouncil.in/llms.txt](https://rentlyo.cscouncil.in/llms.txt)
