@@ -19,6 +19,12 @@
       return;
     }
 
+    // Enforce canonical non-www domain
+    if (loc.hostname.startsWith('www.')) {
+      loc.replace('https://' + loc.hostname.replace(/^www\./, '') + loc.pathname + loc.search + loc.hash);
+      return;
+    }
+
     // Strip trailing /index.html in browser address bar without reload
     if (loc.pathname.endsWith('/index.html')) {
       const cleanPath = loc.pathname.replace(/\/index\.html$/, '/') + loc.search + loc.hash;
@@ -351,11 +357,6 @@
     initSmoothCounterAnimation();
     initRoiCalculator();
     initExitIntentModal();
-
-    // --------------------------------------------------------------------------
-    // Rentlyo High-Performance Brand Loader Controller
-    // --------------------------------------------------------------------------
-    initRentlyoLoader();
   });
 
   // ROI / Time-Savings Calculator

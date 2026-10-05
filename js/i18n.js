@@ -50,7 +50,7 @@
 
       // Page 2: Roz Ki Problem (Daily Pain Points)
       "problem_eyebrow": "DAILY RENTAL PROBLEMS",
-      "problem_title": "Running rent on paper registers has become unbearable.",
+      "problem_title": "Why Paper Registers & Monthly SaaS Both Fail Rental Property Owners",
       "problem_subtitle": "Shops, flats, rooms, or warehouses — whatever you rent out, you face these 4 daily headaches every single month.",
       "problem_stat_num": "2–3 Days",
       "problem_stat_label": "Time spent every single month by a 10–15 unit landlord just chasing rent and following up — month after month, forever.",
@@ -65,7 +65,7 @@
 
       // Page 3: The Solution (4 Steps & Live Flow)
       "how_eyebrow": "THE AUTOMATED SOLUTION",
-      "how_title": "Two apps. One live ledger. 4 steps — then it runs itself.",
+      "how_title": "Two Focused Apps. One Real-Time Cloud Ledger for Rent & Tenant Management",
       "how_subtitle": "A fully connected ecosystem that handles every rupee automatically.",
       "arch_owner_label": "Owner App",
       "arch_owner_sub": "Set deal. Confirm payment.",
@@ -84,7 +84,7 @@
 
       // Page 4: Sab Kuch Shamil Hai (Comprehensive Feature Suite)
       "features_eyebrow": "EVERYTHING IS INCLUDED",
-      "features_title": "Whatever a real property needs, everything is built right in.",
+      "features_title": "Complete Property Management Features: Rent Tracking, Electricity Sub-Meters & Digital Receipts",
       "features_subtitle": "No locked add-ons, no expensive plugins. Designed for real ground realities.",
       "feat_1_title": "Live Dashboard",
       "feat_1_desc": "Real-time visibility over collected rent, outstanding dues, and vacant units across all your buildings.",
@@ -121,7 +121,7 @@
 
       // Page 6: Khud Dekho, Vishwas Karo (Live Demo Verifiable)
       "demo_eyebrow": "SEE IT LIVE, BELIEVE IT",
-      "demo_title": "Live demo — open and test yourself right now.",
+      "demo_title": "Live Interactive Demo: Test the Admin Console & Tenant App on Web and Android",
       "demo_subtitle": "This is not a static mockup. The links below open genuine, working applications running live in the cloud.",
       "demo_admin_label": "ADMIN / OWNER APP",
       "demo_admin_url": "rentlyo-admin.vercel.app →",
@@ -136,7 +136,7 @@
 
       // Page 7: Demo Nahi — Asli Hai (Arya Plaza Real Case Study)
       "proof_eyebrow": "NOT A DEMO — IT'S REAL",
-      "proof_title": "Already running in production on a real commercial property.",
+      "proof_title": "Proven in Live Production: Managing 25+ Commercial & Residential Units at Arya Plaza",
       "proof_desc": "Rentlyo wasn't built in a sanitized tech office. It was forged inside an active commercial marketplace, solving daily ground-reality problems.",
       "proof_property_name": "Arya Plaza",
       "proof_property_address": "J.P. Chowk, Purabsarai Road, Munger, Bihar",
@@ -153,7 +153,7 @@
 
       // Page 8: Apna Plan Chuno (All 4 Pricing Plans)
       "pricing_eyebrow": "CHOOSE YOUR PLAN",
-      "pricing_title": "Launch pricing. Lock it in right now.",
+      "pricing_title": "One-Time ₹20,000 Purchase. Zero Monthly Subscriptions. Lifetime Ownership.",
       "pricing_subtitle": "Introductory prices for early customers. Standard prices shown alongside — these rates will not stay forever.",
       "plan_popular_badge": "MOST POPULAR",
       "plan_portfolio_badge": "BEST FOR LARGE PORTFOLIOS",
@@ -212,7 +212,7 @@
       // Page 10: Shuru Karo Aaj Hi & Objection Handlers
       "final_eyebrow": "START TODAY",
       "final_title": "Your next rent cycle can run itself on autopilot.",
-      "final_subtitle": "Common questions before getting started:",
+      "final_subtitle": "Frequently Asked Questions About Rentlyo Rent & Property Management Software",
       "obj_1_q": "\"I'm not a technical person, will I be able to run this?\"",
       "obj_1_a": "Yes! Everything is pre-configured and handed over ready to use. If you know how to use WhatsApp, you can easily run Rentlyo.",
       "obj_2_q": "\"Is our financial and tenant data safe?\"",
@@ -465,6 +465,7 @@
     currentLang = lang;
     localStorage.setItem('rentlyo_lang', lang);
     document.documentElement.lang = lang;
+    document.documentElement.dir = 'ltr';
 
     const dict = translations[lang] || translations.en;
 

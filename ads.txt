@@ -1,0 +1,3 @@
+# ads.txt - Authorized Digital Sellers declaration for https://rentlyo.cscouncil.in/
+# Rentlyo is a direct-to-consumer software platform and does not sell or host programmatic third-party display advertisements.
+contact=aaryangupta.pm@gmail.com
